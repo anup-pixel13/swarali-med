@@ -360,9 +360,9 @@ img {
 
 /* HERO */
 .hero {
-  --hero-logo-size-min: 240px;
-  --hero-logo-size-fluid: 24vw;
-  --hero-logo-size-max: 300px;
+  --hero-logo-size-min: 300px;
+  --hero-logo-size-fluid: 30vw;
+  --hero-logo-size-max: 380px;
   --hero-brand-max-width: 420px;
   --hero-logo-crop-scale: 100%;
   --hero-logo-offset-x: 0%;
