@@ -1,0 +1,178 @@
+[
+  {
+    "id": 1,
+    "name": "Hospital Bed",
+    "category": "Hospital Furniture",
+    "image": "/equipment/hospital-bed.jpg",
+    "description": "Adjustable hospital bed suitable for home patient care.",
+    "rentPrice": "₹250/day",
+    "monthlyRent": "₹5000/month",
+    "salePrice": "₹45,000",
+    "availability": "Available"
+  },
+  {
+    "id": 2,
+    "name": "ICU Electric Bed",
+    "category": "Hospital Furniture",
+    "image": "/equipment/icu-electric-bed.jpg",
+    "description": "Motorized ICU bed for advanced patient support.",
+    "rentPrice": "₹700/day",
+    "monthlyRent": "₹14000/month",
+    "salePrice": "₹1,25,000",
+    "availability": "Limited Stock"
+  },
+  {
+    "id": 3,
+    "name": "Patient Monitor",
+    "category": "Monitoring Devices",
+    "image": "/equipment/patient-monitor.jpg",
+    "description": "Monitor vitals like pulse, oxygen and blood pressure.",
+    "rentPrice": "₹500/day",
+    "monthlyRent": "₹10000/month",
+    "salePrice": "₹65,000",
+    "availability": "Available"
+  },
+  {
+    "id": 4,
+    "name": "Oxygen Concentrator 5L",
+    "category": "Respiratory Equipment",
+    "image": "/equipment/oxygen-concentrator-5l.jpg",
+    "description": "5 litre oxygen concentrator for respiratory support.",
+    "rentPrice": "₹300/day",
+    "monthlyRent": "₹6000/month",
+    "salePrice": "₹45,000",
+    "availability": "Available"
+  },
+  {
+    "id": 5,
+    "name": "Oxygen Concentrator 10L",
+    "category": "Respiratory Equipment",
+    "image": "/equipment/oxygen-concentrator-10l.jpg",
+    "description": "10 litre oxygen concentrator for high oxygen requirements.",
+    "rentPrice": "₹600/day",
+    "monthlyRent": "₹12000/month",
+    "salePrice": "₹85,000",
+    "availability": "Limited Stock"
+  },
+  {
+    "id": 6,
+    "name": "BiPAP Machine",
+    "category": "Respiratory Equipment",
+    "image": "/equipment/bipap-machine.jpg",
+    "description": "BiPAP machine for assisted breathing support.",
+    "rentPrice": "₹800/day",
+    "monthlyRent": "₹16000/month",
+    "salePrice": "₹75,000",
+    "availability": "Available"
+  },
+  {
+    "id": 7,
+    "name": "CPAP Machine",
+    "category": "Respiratory Equipment",
+    "image": "/equipment/cpap-machine.jpg",
+    "description": "CPAP machine used for continuous airway pressure therapy.",
+    "rentPrice": "₹500/day",
+    "monthlyRent": "₹10000/month",
+    "salePrice": "₹35,000",
+    "availability": "Available"
+  },
+  {
+    "id": 8,
+    "name": "Wheelchair",
+    "category": "Mobility Aids",
+    "image": "/equipment/wheelchair.jpg",
+    "description": "Standard wheelchair for patient mobility support.",
+    "rentPrice": "₹100/day",
+    "monthlyRent": "₹2000/month",
+    "salePrice": "₹8,000",
+    "availability": "Available"
+  },
+  {
+    "id": 9,
+    "name": "Walker",
+    "category": "Mobility Aids",
+    "image": "/equipment/walker.jpg",
+    "description": "Walking support aid for elderly and recovering patients.",
+    "rentPrice": "₹50/day",
+    "monthlyRent": "₹1000/month",
+    "salePrice": "₹2,500",
+    "availability": "Available"
+  },
+  {
+    "id": 10,
+    "name": "Suction Machine",
+    "category": "Respiratory Equipment",
+    "image": "/equipment/suction-machine.jpg",
+    "description": "Portable suction machine for airway clearance.",
+    "rentPrice": "₹200/day",
+    "monthlyRent": "₹4000/month",
+    "salePrice": "₹15,000",
+    "availability": "Available"
+  },
+  {
+    "id": 11,
+    "name": "Nebulizer",
+    "category": "Respiratory Equipment",
+    "image": "/equipment/nebulizer.jpg",
+    "description": "Compact nebulizer for breathing therapy at home.",
+    "rentPrice": "₹50/day",
+    "monthlyRent": "₹1000/month",
+    "salePrice": "₹2,500",
+    "availability": "Available"
+  },
+  {
+    "id": 12,
+    "name": "Air Mattress",
+    "category": "Patient Care",
+    "image": "/equipment/air-mattress.jpg",
+    "description": "Air mattress for bedsore prevention and comfort.",
+    "rentPrice": "₹250/day",
+    "monthlyRent": "₹5000/month",
+    "salePrice": "₹15,000",
+    "availability": "Limited Stock"
+  },
+  {
+    "id": 13,
+    "name": "Infusion Pump",
+    "category": "Monitoring Devices",
+    "image": "/equipment/infusion-pump.jpg",
+    "description": "Precision pump for controlled medicine/fluid delivery.",
+    "rentPrice": "₹400/day",
+    "monthlyRent": "₹8000/month",
+    "salePrice": "₹40,000",
+    "availability": "Available"
+  },
+  {
+    "id": 14,
+    "name": "ECG Machine",
+    "category": "Monitoring Devices",
+    "image": "/equipment/ecg-machine.jpg",
+    "description": "ECG machine for heart activity monitoring.",
+    "rentPrice": "₹700/day",
+    "monthlyRent": "₹14000/month",
+    "salePrice": "₹90,000",
+    "availability": "Limited Stock"
+  },
+  {
+    "id": 15,
+    "name": "Commode Chair",
+    "category": "Patient Care",
+    "image": "/equipment/commode-chair.jpg",
+    "description": "Commode chair for convenient patient support.",
+    "rentPrice": "₹100/day",
+    "monthlyRent": "₹2000/month",
+    "salePrice": "₹5,000",
+    "availability": "Available"
+  },
+  {
+    "id": 16,
+    "name": "Pulse Oximeter",
+    "category": "Monitoring Devices",
+    "image": "/equipment/pulse-oximeter.jpg",
+    "description": "Portable device to measure oxygen saturation and pulse.",
+    "rentPrice": "₹30/day",
+    "monthlyRent": "₹600/month",
+    "salePrice": "₹1,500",
+    "availability": "Available"
+  }
+]
