@@ -202,11 +202,11 @@ function Home() {
               </div>
             </motion.div>
 
-            <div className="hero-tagline-row">
-              <motion.span variants={fadeUp} className="tag premium-tag hero-top-tagline">
+            <motion.div variants={fadeUp} className="hero-tagline-row">
+              <span className="tag premium-tag hero-top-tagline">
                 Providing Excellent Care Since 2015
-              </motion.span>
-            </div>
+              </span>
+            </motion.div>
             <motion.h1 variants={fadeUp}>
               Compassionate Home Healthcare
               <span> & Medical Equipment Support</span>
