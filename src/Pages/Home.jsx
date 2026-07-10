@@ -188,11 +188,11 @@ function Home() {
             initial={prefersReducedMotion ? false : "hidden"}
             animate="show"
           >
-            <motion.div variants={fadeUp} className="hero-brand-strip" aria-label="Hero logo and key stats">
+            <motion.div variants={fadeUp} className="hero-brand-strip" aria-label="Swarali Nursing Services logo and statistics">
               <div className="hero-brand-logo-wrap">
                 <img src={HERO_BRAND_LOGO_PATH} alt="Swarali Nursing Services" className="hero-brand-logo" />
               </div>
-              <div className="hero-brand-stats" aria-label="Key stats">
+              <div className="hero-brand-stats">
                 <span><span className="counter-inline"><Counter end={500} suffix="+" /></span> Happy Patients</span>
                 <span>24/7 Support</span>
               </div>
