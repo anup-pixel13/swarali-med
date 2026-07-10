@@ -1,5 +1,6 @@
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Route, Routes, useLocation } from "react-router-dom";
+import BackToTopButton from "./components/BackToTopButton";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import ScrollProgress from "./components/ScrollProgress";
@@ -39,6 +40,7 @@ function App() {
       <ScrollProgress />
       <Navbar />
       <WhatsAppButton />
+      <BackToTopButton />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<PageShell><Home /></PageShell>} />
