@@ -84,19 +84,20 @@ function Home() {
         <div className="hero-bg-shape hero-shape-1"></div>
         <div className="hero-bg-shape hero-shape-2"></div>
 
-        <div className="container hero-grid">
-          <div className="hero-content" data-aos="fade-right">
-            <div className="hero-brand-strip">
-              <img
-                src="/logo.png"
-                alt="Swarali Nursing Services Logo"
-                className="hero-logo-large"
-              />
-              <div className="hero-tagline-pill">
-                Providing Excellent Care Since 2015
-              </div>
+        <div className="container">
+          <div className="hero-brand-center" data-aos="fade-down">
+            <img
+              src="/logo.png"
+              alt="Swarali Nursing Services Logo"
+              className="hero-logo-large"
+            />
+            <div className="hero-tagline-pill">
+              Providing Excellent Care Since 2015
             </div>
+          </div>
 
+          <div className="hero-grid">
+          <div className="hero-content" data-aos="fade-right">
             <h1>
               Compassionate Home Healthcare
               <span> & Medical Equipment Support</span>
@@ -174,6 +175,7 @@ function Home() {
                 </a>
               </div>
             </div>
+          </div>
           </div>
         </div>
       </section>
