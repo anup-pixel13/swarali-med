@@ -259,9 +259,10 @@ function Home() {
               <div className="hero-brand-bar-copy">
                 <strong>Swarali</strong>
                 <span>Nursing Services &amp; Surgicals</span>
-                <div className="hero-brand-bar-meta">
-                  <Counter end={500} suffix="+" /> Happy Patients &nbsp;·&nbsp; 24/7 Support
-                </div>
+                <ul className="hero-brand-bar-meta" aria-label="Key stats">
+                  <li><Counter end={500} suffix="+" /> Happy Patients</li>
+                  <li>24/7 Support</li>
+                </ul>
               </div>
             </motion.div>
           </motion.div>
