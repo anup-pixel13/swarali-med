@@ -1,9 +1,8 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 
 function EnquiryForm() {
-  const formStartTime = useRef(Date.now());
-
+  const formStartTime = useRef(0);
   const [formData, setFormData] = useState({
     name: "",
     mobile: "",
@@ -12,27 +11,25 @@ function EnquiryForm() {
     message: "",
     website: "",
   });
-
   const [status, setStatus] = useState({
     loading: false,
     success: "",
     error: "",
   });
 
-  const handleChange = (e) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
+  useEffect(() => {
+    formStartTime.current = Date.now();
+  }, []);
+
+  const handleChange = (event) => {
+    setFormData((previous) => ({
+      ...previous,
+      [event.target.name]: event.target.value,
     }));
   };
 
   const handleWhatsApp = () => {
-    const text = `Hello, I want enquiry regarding Swarali Nursing Services.
-Name: ${formData.name}
-Mobile: ${formData.mobile}
-Email: ${formData.email}
-Service: ${formData.service}
-Message: ${formData.message}`;
+    const text = `Hello, I want enquiry regarding Swarali Nursing Services.\nName: ${formData.name}\nMobile: ${formData.mobile}\nEmail: ${formData.email}\nService: ${formData.service}\nMessage: ${formData.message}`;
 
     window.open(
       `https://wa.me/918779508016?text=${encodeURIComponent(text)}`,
@@ -42,13 +39,11 @@ Message: ${formData.message}`;
 
   const isSpamLike = () => {
     const timeTaken = (Date.now() - formStartTime.current) / 1000;
-    if (formData.website.trim() !== "") return true;
-    if (timeTaken < 4) return true;
-    return false;
+    return formData.website.trim() !== "" || timeTaken < 4;
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
     setStatus({
       loading: true,
@@ -72,7 +67,6 @@ Message: ${formData.message}`;
       payload.append("email", formData.email);
       payload.append("service", formData.service);
       payload.append("message", formData.message);
-
       payload.append("_subject", "New Enquiry - Swarali Nursing Services");
       payload.append("_captcha", "true");
       payload.append("_template", "table");
@@ -87,25 +81,25 @@ Message: ${formData.message}`;
         body: payload,
       });
 
-      if (response.ok) {
-        setStatus({
-          loading: false,
-          success: "Thank you, we will contact you shortly.",
-          error: "",
-        });
-
-        setFormData({
-          name: "",
-          mobile: "",
-          email: "",
-          service: "",
-          message: "",
-          website: "",
-        });
-      } else {
+      if (!response.ok) {
         throw new Error("Submission failed");
       }
-    } catch (error) {
+
+      setStatus({
+        loading: false,
+        success: "Thank you, we will contact you shortly.",
+        error: "",
+      });
+      setFormData({
+        name: "",
+        mobile: "",
+        email: "",
+        service: "",
+        message: "",
+        website: "",
+      });
+      formStartTime.current = Date.now();
+    } catch {
       setStatus({
         loading: false,
         success: "",
@@ -115,8 +109,9 @@ Message: ${formData.message}`;
   };
 
   return (
-    <form className="card enquiry-form" onSubmit={handleSubmit}>
+    <form className="card enquiry-form liquid-glass" onSubmit={handleSubmit} data-aos="fade-up">
       <h3>Book Service / Send Enquiry</h3>
+      <p>Fill in your details and our team will reach out shortly.</p>
 
       <input
         type="text"
@@ -131,7 +126,7 @@ Message: ${formData.message}`;
         type="tel"
         name="mobile"
         placeholder="Mobile Number"
-        pattern="[0-9]{10}"
+        pattern="[6-9][0-9]{9}"
         value={formData.mobile}
         onChange={handleChange}
         required
@@ -164,6 +159,7 @@ Message: ${formData.message}`;
         placeholder="Leave this field empty"
         value={formData.website}
         onChange={handleChange}
+        aria-hidden="true"
       />
 
       <textarea
@@ -186,8 +182,8 @@ Message: ${formData.message}`;
         </button>
       </div>
 
-      {status.success && <p className="success">{status.success}</p>}
-      {status.error && <p className="error-text">{status.error}</p>}
+      {status.success ? <p className="success">{status.success}</p> : null}
+      {status.error ? <p className="error-text">{status.error}</p> : null}
     </form>
   );
 }

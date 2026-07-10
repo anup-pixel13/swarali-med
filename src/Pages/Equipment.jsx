@@ -1,35 +1,77 @@
+import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
-import items from "../data/equipment.json";
 import EquipmentCard from "../components/EquipmentCard";
 import EquipmentModal from "../components/EquipmentModal";
+import items from "../data/equipment.json";
 
 const PER_PAGE = 12;
 const STORAGE_KEY = "swarali_equipment_state";
 
+function getSavedState() {
+  if (typeof window === "undefined") {
+    return {
+      query: "",
+      category: "All",
+      availability: "All",
+      page: 1,
+      scrollY: 0,
+    };
+  }
+
+  try {
+    const saved = window.sessionStorage.getItem(STORAGE_KEY);
+    if (!saved) {
+      return {
+        query: "",
+        category: "All",
+        availability: "All",
+        page: 1,
+        scrollY: 0,
+      };
+    }
+
+    const parsed = JSON.parse(saved);
+    return {
+      query: parsed.query || "",
+      category: parsed.category || "All",
+      availability: parsed.availability || "All",
+      page: parsed.page || 1,
+      scrollY: parsed.scrollY || 0,
+    };
+  } catch {
+    return {
+      query: "",
+      category: "All",
+      availability: "All",
+      page: 1,
+      scrollY: 0,
+    };
+  }
+}
+
 function Equipment() {
-  const [query, setQuery] = useState("");
-  const [category, setCategory] = useState("All");
-  const [availability, setAvailability] = useState("All");
-  const [page, setPage] = useState(1);
+  const prefersReducedMotion = useReducedMotion();
+  const [initialState] = useState(() => getSavedState());
+  const [query, setQuery] = useState(initialState.query);
+  const [category, setCategory] = useState(initialState.category);
+  const [availability, setAvailability] = useState(initialState.availability);
+  const [page, setPage] = useState(initialState.page);
   const [selected, setSelected] = useState(null);
 
   useEffect(() => {
-    const saved = sessionStorage.getItem(STORAGE_KEY);
-    if (saved) {
-      const parsed = JSON.parse(saved);
-      setQuery(parsed.query || "");
-      setCategory(parsed.category || "All");
-      setAvailability(parsed.availability || "All");
-      setPage(parsed.page || 1);
-
-      setTimeout(() => {
-        if (parsed.scrollY) window.scrollTo(0, parsed.scrollY);
+    if (initialState.scrollY > 0) {
+      const timer = window.setTimeout(() => {
+        window.scrollTo(0, initialState.scrollY);
       }, 80);
+
+      return () => window.clearTimeout(timer);
     }
-  }, []);
+
+    return undefined;
+  }, [initialState.scrollY]);
 
   useEffect(() => {
-    sessionStorage.setItem(
+    window.sessionStorage.setItem(
       STORAGE_KEY,
       JSON.stringify({
         query,
@@ -41,67 +83,69 @@ function Equipment() {
     );
   }, [query, category, availability, page]);
 
-  const categories = ["All", ...new Set(items.map((i) => i.category))];
+  const categories = ["All", ...new Set(items.map((item) => item.category))];
   const availabilityOptions = ["All", "Available", "Limited Stock", "Unavailable"];
 
   const filtered = useMemo(() => {
+    const normalizedQuery = query.toLowerCase();
+
     return items.filter((item) => {
-      const q = query.toLowerCase();
       const matchesQuery =
-        item.name.toLowerCase().includes(q) ||
-        item.category.toLowerCase().includes(q) ||
-        item.description.toLowerCase().includes(q);
+        item.name.toLowerCase().includes(normalizedQuery) ||
+        item.category.toLowerCase().includes(normalizedQuery) ||
+        item.description.toLowerCase().includes(normalizedQuery);
 
       const matchesCategory = category === "All" || item.category === category;
-      const matchesAvailability =
-        availability === "All" || item.availability === availability;
+      const matchesAvailability = availability === "All" || item.availability === availability;
 
       return matchesQuery && matchesCategory && matchesAvailability;
     });
-  }, [query, category, availability]);
+  }, [availability, category, query]);
 
-  const totalPages = Math.ceil(filtered.length / PER_PAGE);
-  const paged = filtered.slice((page - 1) * PER_PAGE, page * PER_PAGE);
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
+  const currentPage = Math.min(page, totalPages);
+  const paged = filtered.slice((currentPage - 1) * PER_PAGE, currentPage * PER_PAGE);
+  const activeFilters = [category !== "All" ? category : null, availability !== "All" ? availability : null, query ? `“${query}”` : null].filter(Boolean);
 
   return (
-    <section className="section premium-page-bg">
+    <section className="section premium-page-bg section-surface section-surface-light">
       <div className="container">
-        <div className="premium-page-head" data-aos="fade-up">
+        <motion.div className="premium-page-head" initial={prefersReducedMotion ? false : { opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.45 }}>
           <span className="tag premium-tag">Medical Equipment on Rent & Sale</span>
           <h1>Browse Equipment For Home Patient Care</h1>
           <p>
             Explore hospital-grade home care equipment available for rent or purchase
             with quick enquiry support on WhatsApp.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="premium-filter-box card glass-premium-card" data-aos="fade-up">
+        <motion.div className="premium-filter-box card liquid-glass" initial={prefersReducedMotion ? false : { opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.35 }}>
           <div className="filters filters-3">
             <input
               placeholder="Search equipment"
               value={query}
-              onChange={(e) => {
-                setQuery(e.target.value);
+              onChange={(event) => {
+                setQuery(event.target.value);
                 setPage(1);
               }}
             />
 
             <select
               value={category}
-              onChange={(e) => {
-                setCategory(e.target.value);
+              onChange={(event) => {
+                setCategory(event.target.value);
                 setPage(1);
               }}
             >
-              {categories.map((c) => (
-                <option key={c}>{c}</option>
+              {categories.map((option) => (
+                <option key={option}>{option}</option>
               ))}
             </select>
 
             <select
               value={availability}
-              onChange={(e) => {
-                setAvailability(e.target.value);
+              onChange={(event) => {
+                setAvailability(event.target.value);
                 setPage(1);
               }}
             >
@@ -110,46 +154,63 @@ function Equipment() {
               ))}
             </select>
           </div>
-        </div>
+
+          <div className="filter-summary">
+            <p>Showing <strong>{paged.length}</strong> of <strong>{filtered.length}</strong> matching equipment items.</p>
+            <div className="filter-chip-row">
+              {activeFilters.length > 0 ? activeFilters.map((item) => (
+                <span className="filter-chip" key={item}>{item}</span>
+              )) : <span className="filter-chip">All equipment</span>}
+            </div>
+          </div>
+        </motion.div>
 
         {paged.length > 0 ? (
           <>
             <div className="equipment-grid premium-equipment-grid">
               {paged.map((item, index) => (
-                <div key={item.id} data-aos="fade-up" data-aos-delay={index * 50}>
+                <motion.div
+                  key={item.id}
+                  initial={prefersReducedMotion ? false : { opacity: 0, y: 18 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.15 }}
+                  transition={{ duration: 0.28, delay: index * 0.03 }}
+                >
                   <EquipmentCard item={item} onView={setSelected} />
-                </div>
+                </motion.div>
               ))}
             </div>
 
             <div className="pagination premium-pagination">
-              <button disabled={page === 1} onClick={() => setPage((p) => p - 1)}>
+              <button type="button" disabled={currentPage === 1} onClick={() => setPage((current) => Math.max(1, current - 1))}>
                 Previous
               </button>
 
-              {Array.from({ length: totalPages }, (_, i) => (
+              {Array.from({ length: totalPages }, (_, index) => (
                 <button
-                  key={i + 1}
-                  className={page === i + 1 ? "active" : ""}
-                  onClick={() => setPage(i + 1)}
+                  type="button"
+                  key={index + 1}
+                  className={currentPage === index + 1 ? "active" : ""}
+                  onClick={() => setPage(index + 1)}
                 >
-                  {i + 1}
+                  {index + 1}
                 </button>
               ))}
 
               <button
-                disabled={page === totalPages}
-                onClick={() => setPage((p) => p + 1)}
+                type="button"
+                disabled={currentPage === totalPages}
+                onClick={() => setPage((current) => Math.min(totalPages, current + 1))}
               >
                 Next
               </button>
             </div>
           </>
         ) : (
-          <div className="card empty-state glass-premium-card">
+          <motion.div className="card empty-state liquid-glass" initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }}>
             <h3>No equipment found</h3>
             <p>Try changing your search term or filters.</p>
-          </div>
+          </motion.div>
         )}
 
         <EquipmentModal item={selected} onClose={() => setSelected(null)} />

@@ -7,14 +7,14 @@ function WhatsAppButton() {
 
   return (
     <a
-      className="whatsapp-float upgraded-whatsapp pulse-whatsapp"
+      className="whatsapp-float pulse-whatsapp"
       href={`https://wa.me/918779508016?text=${msg}`}
       target="_blank"
       rel="noreferrer"
-      aria-label="WhatsApp Enquiry"
+      aria-label="Chat with Swarali on WhatsApp"
     >
       <FaWhatsapp />
-      <span>WhatsApp</span>
+      <span>Chat with us</span>
     </a>
   );
 }

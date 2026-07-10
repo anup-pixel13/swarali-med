@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FaPhoneAlt, FaWhatsapp, FaMapMarkerAlt, FaInstagram, FaFacebookF } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaMapMarkerAlt, FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 import logo from "../assets/logo.png";
 
 function Footer() {
@@ -12,7 +12,7 @@ function Footer() {
             <div>
               <h3>Swarali Nursing Services & Surgicals</h3>
               <p>
-                Compassionate healthcare at your doorstep with professional nursing care,
+                Providing Excellent Care Since 2015 with professional nursing care,
                 attendants, doctor visits and medical equipment support.
               </p>
             </div>
