@@ -364,9 +364,9 @@ img {
   --hero-logo-size-fluid: 24vw;
   --hero-logo-size-max: 300px;
   --hero-brand-max-width: 420px;
-  --hero-logo-crop-scale: 196%;
-  --hero-logo-offset-x: -24%;
-  --hero-logo-offset-y: -15%;
+  --hero-logo-crop-scale: 100%;
+  --hero-logo-offset-x: 0%;
+  --hero-logo-offset-y: 0%;
   position: relative;
   padding: calc(var(--nav-height) + 12px) 0 90px;
   overflow: hidden;
@@ -443,8 +443,7 @@ img {
   justify-content: center;
   width: clamp(var(--hero-logo-size-min), var(--hero-logo-size-fluid), var(--hero-logo-size-max));
   max-width: 100%;
-  aspect-ratio: 1.45;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .hero-brand-logo {
