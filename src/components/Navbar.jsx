@@ -1,7 +1,27 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { FaBars, FaPhoneAlt, FaTimes, FaWhatsapp } from "react-icons/fa";
+import {
+  FaBars,
+  FaClinicMedical,
+  FaEnvelope,
+  FaFileContract,
+  FaHome,
+  FaInfoCircle,
+  FaPhoneAlt,
+  FaProcedures,
+  FaTimes,
+  FaWhatsapp,
+} from "react-icons/fa";
 import logo from "../assets/logo.png";
+
+const navItems = [
+  { to: "/", label: "Home", icon: <FaHome />, end: true },
+  { to: "/about", label: "About", icon: <FaInfoCircle /> },
+  { to: "/services", label: "Services", icon: <FaClinicMedical /> },
+  { to: "/equipment", label: "Medical Equipment", icon: <FaProcedures /> },
+  { to: "/rental-policy", label: "Rental Policy", icon: <FaFileContract /> },
+  { to: "/contact", label: "Contact", icon: <FaEnvelope /> },
+];
 
 function Navbar() {
   const [open, setOpen] = useState(false);
@@ -14,10 +34,12 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const closeMenu = () => setOpen(false);
+
   return (
     <header className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
       <div className="container navbar-inner">
-        <Link to="/" className="brand" aria-label="Swarali Nursing Services home">
+        <Link to="/" className="brand" aria-label="Swarali Nursing Services home" onClick={closeMenu}>
           <img src={logo} alt="Swarali Nursing Services Logo" className="brand-logo-img" />
           <div className="brand-copy">
             <h2>Swarali</h2>
@@ -36,15 +58,15 @@ function Navbar() {
         </button>
 
         <nav className={`nav-links ${open ? "active" : ""}`}>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/about">About</NavLink>
-          <NavLink to="/services">Services</NavLink>
-          <NavLink to="/equipment">Medical Equipment</NavLink>
-          <NavLink to="/rental-policy">Rental Policy</NavLink>
-          <NavLink to="/contact">Contact</NavLink>
+          {navItems.map(({ to, label, icon, end }) => (
+            <NavLink key={to} to={to} end={end} onClick={closeMenu}>
+              {icon}
+              <span>{label}</span>
+            </NavLink>
+          ))}
 
           <div className="nav-cta-group">
-            <a href="tel:+918779508016" className="btn btn-sm btn-outline">
+            <a href="tel:+918779508016" className="btn btn-sm btn-outline" onClick={closeMenu}>
               <FaPhoneAlt />
               Call
             </a>
@@ -53,6 +75,7 @@ function Navbar() {
               target="_blank"
               rel="noreferrer"
               className="btn btn-sm"
+              onClick={closeMenu}
             >
               <FaWhatsapp />
               WhatsApp

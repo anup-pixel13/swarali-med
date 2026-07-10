@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import EquipmentCard from "../components/EquipmentCard";
 import EquipmentModal from "../components/EquipmentModal";
 import items from "../data/equipment.json";
@@ -58,6 +58,12 @@ function Equipment() {
   const [page, setPage] = useState(initialState.page);
   const [selected, setSelected] = useState(null);
 
+  // Refs for deterministic scroll-on-pagination
+  const equipmentGridRef = useRef(null);
+  const paginationRef = useRef(null);
+  // Tracks the scroll intent from the last pagination interaction
+  const pageScrollIntentRef = useRef(null);
+
   useEffect(() => {
     if (initialState.scrollY > 0) {
       const timer = window.setTimeout(() => {
@@ -82,6 +88,23 @@ function Equipment() {
       })
     );
   }, [query, category, availability, page]);
+
+  // Scroll to the right position after a pagination click
+  useEffect(() => {
+    const intent = pageScrollIntentRef.current;
+    if (!intent) return;
+    pageScrollIntentRef.current = null;
+
+    const behavior = prefersReducedMotion ? "auto" : "smooth";
+
+    if (intent === "prev") {
+      // Previous → scroll near the pagination controls so user sees last row + pagination
+      paginationRef.current?.scrollIntoView({ behavior, block: "end" });
+    } else {
+      // Next or individual page → scroll to top of equipment listing
+      equipmentGridRef.current?.scrollIntoView({ behavior, block: "start" });
+    }
+  }, [page, prefersReducedMotion]);
 
   const categories = ["All", ...new Set(items.map((item) => item.category))];
   const availabilityOptions = ["All", "Available", "Limited Stock", "Unavailable"];
@@ -167,7 +190,7 @@ function Equipment() {
 
         {paged.length > 0 ? (
           <>
-            <div className="equipment-grid premium-equipment-grid">
+            <div ref={equipmentGridRef} className="equipment-grid premium-equipment-grid">
               {paged.map((item, index) => (
                 <motion.div
                   key={item.id}
@@ -181,8 +204,15 @@ function Equipment() {
               ))}
             </div>
 
-            <div className="pagination premium-pagination">
-              <button type="button" disabled={currentPage === 1} onClick={() => setPage((current) => Math.max(1, current - 1))}>
+            <div ref={paginationRef} className="pagination premium-pagination">
+              <button
+                type="button"
+                disabled={currentPage === 1}
+                onClick={() => {
+                  pageScrollIntentRef.current = "prev";
+                  setPage((current) => Math.max(1, current - 1));
+                }}
+              >
                 Previous
               </button>
 
@@ -191,7 +221,10 @@ function Equipment() {
                   type="button"
                   key={index + 1}
                   className={currentPage === index + 1 ? "active" : ""}
-                  onClick={() => setPage(index + 1)}
+                  onClick={() => {
+                    pageScrollIntentRef.current = "page-click";
+                    setPage(index + 1);
+                  }}
                 >
                   {index + 1}
                 </button>
@@ -200,7 +233,10 @@ function Equipment() {
               <button
                 type="button"
                 disabled={currentPage === totalPages}
-                onClick={() => setPage((current) => Math.min(totalPages, current + 1))}
+                onClick={() => {
+                  pageScrollIntentRef.current = "next";
+                  setPage((current) => Math.min(totalPages, current + 1));
+                }}
               >
                 Next
               </button>

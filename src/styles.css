@@ -37,7 +37,7 @@ body {
   background:
     radial-gradient(circle at top left, rgba(0, 59, 149, 0.18), transparent 26%),
     radial-gradient(circle at top right, rgba(var(--soft-yellow-rgb), 0.24), transparent 24%),
-    linear-gradient(180deg, rgb(128, 255, 255) 0%, rgb(128, 255, 255) 46%, rgb(0, 128, 255) 100%);
+    linear-gradient(180deg, #e8f2ff 0%, #edf5ff 50%, #e6f0ff 100%);
   overflow-x: hidden;
   position: relative;
 }
@@ -123,17 +123,17 @@ img {
 .premium-page-bg,
 .page-banner {
   background:
-    linear-gradient(180deg, rgb(128, 255, 255), rgba(234, 243, 255, 0.96) 56%, rgb(0, 128, 255));
+    linear-gradient(180deg, rgba(225, 240, 255, 0.98), rgba(234, 243, 255, 0.96) 56%, rgba(215, 235, 255, 0.97));
 }
 
 .section-surface-cream {
   background:
-    linear-gradient(180deg, rgba(255, 251, 242, 0.96), rgba(255, 255, 255, 0.96) 55%, rgba(234, 243, 255, 0.94));
+    linear-gradient(180deg, rgba(230, 244, 255, 0.98), rgba(210, 234, 255, 0.96) 54%, rgba(225, 242, 255, 0.97));
 }
 
 .section-surface-blue {
   background:
-    linear-gradient(180deg, rgba(232, 242, 255, 0.96), rgba(244, 248, 255, 0.98) 54%, rgba(255, 251, 241, 0.96));
+    linear-gradient(180deg, rgba(205, 228, 255, 0.97), rgba(190, 218, 255, 0.96) 54%, rgba(210, 232, 255, 0.97));
 }
 
 .section-surface-yellow {
@@ -487,19 +487,19 @@ img {
 }
 
 .hero-orb-blue {
-  width: 160px;
-  height: 160px;
-  top: 26px;
-  left: -30px;
-  background: rgba(0, 59, 149, 0.22);
+  width: 130px;
+  height: 130px;
+  top: 14px;
+  left: -8px;
+  background: rgba(0, 59, 149, 0.14);
 }
 
 .hero-orb-gold {
-  width: 140px;
-  height: 140px;
-  right: 18px;
-  bottom: 32px;
-  background: rgba(var(--soft-yellow-rgb), 0.36);
+  width: 110px;
+  height: 110px;
+  right: 12px;
+  bottom: 26px;
+  background: rgba(var(--soft-yellow-rgb), 0.26);
 }
 
 .hero-main-panel {
@@ -598,6 +598,7 @@ img {
 .icon-strip-grid,
 .stats-grid,
 .services-grid,
+.premium-services-grid,
 .why-grid,
 .premium-highlight-grid,
 .policy-grid,
@@ -624,6 +625,7 @@ img {
 }
 
 .services-grid,
+.premium-services-grid,
 .premium-highlight-grid,
 .policy-grid,
 .equipment-grid {
@@ -789,11 +791,22 @@ img {
 }
 
 .parallax-card .btn-outline,
-.premium-emergency-strip .btn-outline,
-.navbar .btn-outline {
+.premium-emergency-strip .btn-outline {
   background: rgba(255, 255, 255, 0.12);
   color: var(--white);
   border-color: rgba(255, 255, 255, 0.28);
+}
+
+.navbar .btn-outline {
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--text-navy);
+  border-color: rgba(0, 59, 149, 0.22);
+  box-shadow: 0 8px 20px rgba(0, 59, 149, 0.1);
+}
+
+.navbar .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(0, 59, 149, 0.32);
 }
 
 .equipment-preview-card {
@@ -1269,7 +1282,7 @@ img {
   top: 0;
   z-index: 1100;
   backdrop-filter: blur(16px) saturate(140%);
-  background: linear-gradient(120deg, rgb(0, 0, 255), rgba(234, 243, 255, 0.9), rgba(255, 247, 220, 0.86), rgb(128, 0, 255));
+  background: linear-gradient(120deg, rgba(0, 59, 149, 0.12), rgba(234, 243, 255, 0.94) 42%, rgba(255, 247, 220, 0.82) 72%, rgba(0, 59, 149, 0.10));
   background-size: 220% 220%;
   animation: navGradient 9s ease infinite;
   border-bottom: 1px solid rgba(255, 255, 255, 0.54);
@@ -1294,11 +1307,13 @@ img {
 
 .brand-logo-img,
 .footer-logo-img {
-  width: 58px;
-  height: 58px;
+  width: 66px;
+  height: 66px;
   object-fit: contain;
   border-radius: 20px;
-  box-shadow: 0 12px 30px rgba(0, 59, 149, 0.12);
+  box-shadow: 0 12px 30px rgba(0, 59, 149, 0.14);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2px;
 }
 
 .brand-copy h2 {
@@ -1322,6 +1337,9 @@ img {
 
 .nav-links a {
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-weight: 600;
   color: var(--text-navy);
 }
@@ -1533,6 +1551,7 @@ img {
   }
 
   .services-grid,
+  .premium-services-grid,
   .premium-highlight-grid,
   .equipment-grid,
   .equipment-preview-grid,
@@ -1613,6 +1632,7 @@ img {
   .stats-grid,
   .why-grid,
   .services-grid,
+  .premium-services-grid,
   .premium-highlight-grid,
   .equipment-grid,
   .equipment-preview-grid,
@@ -1663,7 +1683,9 @@ img {
   }
 
   .brand-copy p {
-    display: none;
+    font-size: 0.78rem;
+    max-width: 140px;
+    line-height: 1.2;
   }
 }
 
@@ -1691,5 +1713,71 @@ img {
 
   .btn::before {
     display: none;
+  }
+}
+
+/* ── Lighter hero variant ── */
+.lighter-hero {
+  background:
+    radial-gradient(circle at top left, rgba(0, 59, 149, 0.08), transparent 22%),
+    radial-gradient(circle at 86% 8%, rgba(var(--soft-yellow-rgb), 0.12), transparent 18%),
+    linear-gradient(180deg, rgba(240, 248, 255, 0.99), rgba(234, 243, 255, 0.98) 60%, rgba(255, 249, 238, 0.95)) !important;
+}
+
+/* ── Services Snapshot (icon-strip) — richer light-blue neon ── */
+.icon-strip-section {
+  background:
+    linear-gradient(160deg, rgba(195, 228, 255, 0.99), rgba(170, 210, 255, 0.97) 46%, rgba(200, 232, 255, 0.98)) !important;
+}
+
+/* ── Services Grid section — richer neon blue ── */
+.services-premium-section {
+  background:
+    linear-gradient(160deg, rgba(180, 218, 255, 0.99), rgba(155, 204, 255, 0.97) 50%, rgba(185, 220, 255, 0.98)) !important;
+}
+
+/* ── Scroll-to-top floating button ── */
+.back-to-top {
+  position: fixed;
+  right: 22px;
+  bottom: 96px;
+  z-index: 1150;
+  display: inline-grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #003b95, #2767cf 58%, #4b88ea);
+  color: var(--white);
+  font-size: 1.05rem;
+  box-shadow: 0 16px 32px rgba(0, 59, 149, 0.28);
+  cursor: pointer;
+  animation: backToTopIn 0.3s ease;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.back-to-top:hover {
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 20px 44px rgba(0, 59, 149, 0.38);
+}
+
+@keyframes backToTopIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 640px) {
+  .back-to-top {
+    right: 16px;
+    bottom: 82px;
+    width: 44px;
+    height: 44px;
   }
 }
