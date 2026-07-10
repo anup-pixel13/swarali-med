@@ -133,12 +133,12 @@ img {
 
 .section-surface-blue {
   background:
-    linear-gradient(180deg, rgba(205, 228, 255, 0.97), rgba(190, 218, 255, 0.96) 54%, rgba(210, 232, 255, 0.97));
+    linear-gradient(180deg, rgba(205, 228, 255, 0.97), rgba(190, 218, 255, 0.96) 54%, rgb(128, 128, 255));
 }
 
 .section-surface-yellow {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 249, 236, 0.98) 54%, rgba(255, 255, 255, 0.96));
+    linear-gradient(180deg, rgb(128, 128, 255), rgba(255, 249, 236, 0.98) 54%, rgba(255, 255, 255, 0.96));
 }
 
 .scroll-progress {
@@ -335,6 +335,7 @@ img {
 
 .btn-sm {
   padding: 12px 18px;
+  background: rgb(13, 200, 79);
 }
 
 .icon-button,
@@ -360,10 +361,10 @@ img {
 
 /* HERO */
 .hero {
-  --hero-logo-size-min: 450px;
-  --hero-logo-size-fluid: 45vw;
-  --hero-logo-size-max: 570px;
-  --hero-brand-max-width: 420px;
+  --hero-logo-size-min: 420px;
+  --hero-logo-size-fluid: 48vw;
+  --hero-logo-size-max: 620px;
+  --hero-brand-max-width: 640px;
   --hero-logo-crop-scale: 100%;
   --hero-logo-offset-x: 0%;
   --hero-logo-offset-y: 0%;
@@ -414,7 +415,7 @@ img {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1fr 0.75fr;
   gap: 38px;
   align-items: flex-start;
 }
@@ -431,7 +432,8 @@ img {
   flex-direction: column;
   align-items: center;
   gap: 14px;
-  width: min(100%, var(--hero-brand-max-width));
+  width: 100%;
+  max-width: var(--hero-brand-max-width);
   margin: 0 auto 20px;
   text-align: center;
   align-self: center;
@@ -1023,7 +1025,7 @@ img {
 }
 
 .premium-emergency-strip {
-  background: linear-gradient(120deg, #002d72, #003b95, #1d5fd1, #355f9b, #003b95);
+  background: linear-gradient(120deg, rgb(128, 255, 255), #003b95, #1d5fd1, #355f9b, rgb(116, 214, 211));
   background-size: 260% 260%;
   animation: deepGradient 12s ease infinite;
 }
@@ -1346,7 +1348,7 @@ img {
   top: 0;
   z-index: 1100;
   backdrop-filter: blur(16px) saturate(140%);
-  background: linear-gradient(120deg, rgba(255, 255, 255, 0.94), rgba(234, 243, 255, 0.96), rgba(255, 247, 220, 0.92), rgba(255, 255, 255, 0.94));
+  background: linear-gradient(120deg, rgb(0, 0, 255), rgba(234, 243, 255, 0.96), rgb(128, 255, 255), rgb(192, 192, 192));
   background-size: 220% 220%;
   animation: navGradient 9s ease infinite;
   border-bottom: 1px solid rgba(255, 255, 255, 0.54);
@@ -1613,7 +1615,7 @@ img {
   background:
     radial-gradient(circle at top left, rgba(0, 59, 149, 0.08), transparent 22%),
     radial-gradient(circle at 86% 8%, rgba(var(--soft-yellow-rgb), 0.12), transparent 18%),
-    linear-gradient(180deg, rgb(128, 191, 255), rgba(234, 243, 255, 0.98) 60%, rgb(128, 255, 255)) !important;
+    linear-gradient(180deg, rgb(128, 255, 255), rgba(234, 243, 255, 0.98) 60%, rgb(128, 128, 255)) !important;
 }
 
 .icon-strip-section {
@@ -1824,7 +1826,8 @@ img {
   }
 
   .hero-brand-strip {
-    width: min(100%, 320px);
+    width: 100%;
+    max-width: 420px;
     margin-bottom: 16px;
   }
 
@@ -1834,7 +1837,7 @@ img {
   }
 
   .hero-brand-logo-wrap {
-    width: clamp(190px, 54vw, 240px);
+    width: clamp(260px, 78vw, 380px);
   }
 
   .hero-brand-stats {
