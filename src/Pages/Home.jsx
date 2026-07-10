@@ -43,6 +43,12 @@ const stagger = {
   },
 };
 
+const HERO_BRAND_FLOAT = { y: [0, -8, 0] };
+const HERO_BRAND_FLOAT_TRANSITION = { duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.2 };
+
+const HERO_PANEL_FLOAT = { y: [0, -10, 0] };
+const HERO_PANEL_FLOAT_TRANSITION = { duration: 5.2, repeat: Infinity, ease: "easeInOut" };
+
 const PARALLAX_IMAGES = {
   primary: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=80",
   secondary: "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1600&q=80",
@@ -189,11 +195,11 @@ function Home() {
             <motion.div
               variants={fadeUp}
               className="hero-brand-strip"
-              animate={prefersReducedMotion ? undefined : { y: [0, -8, 0] }}
-              transition={prefersReducedMotion ? undefined : { duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
+              animate={prefersReducedMotion ? undefined : HERO_BRAND_FLOAT}
+              transition={prefersReducedMotion ? undefined : HERO_BRAND_FLOAT_TRANSITION}
             >
               <div className="hero-brand-logo-wrap">
-                <img src={logo} alt="Swarali Nursing Services" className="hero-brand-logo" />
+                <img src={logo} alt="Swarali Nursing Services Logo" className="hero-brand-logo" />
               </div>
               <div className="hero-brand-stats" role="group" aria-label="Swarali care statistics">
                 <span className="hero-brand-stat">
@@ -243,8 +249,8 @@ function Home() {
             <div className="hero-orb hero-orb-gold" />
             <motion.div
               className="hero-main-panel liquid-glass"
-              animate={prefersReducedMotion ? undefined : { y: [0, -10, 0] }}
-              transition={prefersReducedMotion ? undefined : { duration: 5.2, repeat: Infinity, ease: "easeInOut" }}
+              animate={prefersReducedMotion ? undefined : HERO_PANEL_FLOAT}
+              transition={prefersReducedMotion ? undefined : HERO_PANEL_FLOAT_TRANSITION}
             >
               <div className="hero-panel-badge">Care That Heals, Service That Matters</div>
               <h3>Professional home healthcare support for your family</h3>
