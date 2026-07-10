@@ -67,7 +67,7 @@ function Services() {
           </p>
         </motion.div>
 
-        <div className="premium-services-grid">
+        <div className="premium-services-grid services-8-grid">
           {items.map((item, index) => (
             <motion.div
               key={item.title}

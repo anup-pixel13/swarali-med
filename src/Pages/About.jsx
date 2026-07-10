@@ -38,7 +38,7 @@ function About() {
   ];
 
   return (
-    <section className="section premium-page-bg section-surface section-surface-light">
+    <section className="section premium-page-bg section-surface about-page-section">
       <div className="container">
         <motion.div className="premium-page-head" initial={prefersReducedMotion ? false : { opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.45 }}>
           <span className="tag premium-tag">About Swarali</span>
@@ -82,7 +82,7 @@ function About() {
           </motion.div>
         </div>
 
-        <div className="premium-highlight-grid">
+        <div className="premium-highlight-grid about-highlights-grid">
           {highlights.map((item, index) => (
             <motion.div
               key={item.title}
