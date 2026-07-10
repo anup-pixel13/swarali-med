@@ -89,7 +89,7 @@ function Home() {
             <div className="hero-brand-strip">
               <img
                 src="/logo.png"
-                alt="Swarali Nursing Services logo"
+                alt="Swarali Nursing Services Logo"
                 className="hero-logo-large"
               />
               <div className="hero-tagline-pill">
@@ -108,7 +108,7 @@ function Home() {
               & sales — right at your doorstep.
             </p>
 
-            <div className="hero-meta-stats" aria-label="Swarali care statistics">
+            <div className="hero-meta-stats" role="group" aria-label="Swarali care statistics">
               <div className="hero-meta-stat">
                 <strong>500+</strong>
                 <span>Happy Patients</span>

@@ -360,6 +360,10 @@ img {
 
 /* HERO */
 .hero {
+  --hero-logo-size-min: 200px;
+  --hero-logo-size-fluid: 24vw;
+  --hero-logo-size-max: 310px;
+  --hero-stats-max-width: 380px;
   position: relative;
   padding: calc(var(--nav-height) + 12px) 0 90px;
   overflow: hidden;
@@ -428,7 +432,7 @@ img {
 }
 
 .hero-logo-large {
-  width: clamp(200px, 24vw, 310px);
+  width: clamp(var(--hero-logo-size-min), var(--hero-logo-size-fluid), var(--hero-logo-size-max));
   height: auto;
   object-fit: contain;
   display: block;
@@ -456,7 +460,7 @@ img {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
-  width: min(100%, 380px);
+  width: min(100%, var(--hero-stats-max-width));
 }
 
 .hero-meta-stat {
