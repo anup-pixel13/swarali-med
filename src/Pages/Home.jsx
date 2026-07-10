@@ -20,6 +20,7 @@ import EquipmentPreview from "../components/EquipmentPreview";
 import FAQ from "../components/FAQ";
 import Parallax from "../components/Parallax";
 import Testimonials from "../components/Testimonials";
+import logo from "../assets/logo.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -249,25 +250,20 @@ function Home() {
               </div>
             </motion.div>
 
-            <div className="hero-mini-cards-row">
-              <motion.div
-                className="mini-stat-card liquid-glass"
-                animate={prefersReducedMotion ? undefined : { y: [0, -12, 0] }}
-                transition={prefersReducedMotion ? undefined : { duration: 4.6, repeat: Infinity, ease: "easeInOut" }}
-              >
-                <strong><Counter end={500} suffix="+" /></strong>
-                <span>Happy Patients</span>
-              </motion.div>
-
-              <motion.div
-                className="mini-stat-card liquid-glass"
-                animate={prefersReducedMotion ? undefined : { y: [0, -8, 0] }}
-                transition={prefersReducedMotion ? undefined : { duration: 5.4, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
-              >
-                <strong>24/7</strong>
-                <span>Support</span>
-              </motion.div>
-            </div>
+            <motion.div
+              className="hero-brand-bar liquid-glass"
+              animate={prefersReducedMotion ? undefined : { y: [0, -8, 0] }}
+              transition={prefersReducedMotion ? undefined : { duration: 5.0, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
+            >
+              <img src={logo} alt="Swarali Nursing Services" className="hero-brand-bar-logo" />
+              <div className="hero-brand-bar-copy">
+                <strong>Swarali</strong>
+                <span>Nursing Services &amp; Surgicals</span>
+                <div className="hero-brand-bar-meta">
+                  <Counter end={500} suffix="+" /> Happy Patients &nbsp;·&nbsp; 24/7 Support
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
