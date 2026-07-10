@@ -187,7 +187,12 @@ function Home() {
             initial={prefersReducedMotion ? false : "hidden"}
             animate="show"
           >
-            <motion.div variants={fadeUp} className="hero-brand-strip">
+            <motion.div
+              variants={fadeUp}
+              className="hero-brand-strip"
+              animate={prefersReducedMotion ? undefined : { y: [0, -8, 0] }}
+              transition={prefersReducedMotion ? undefined : { duration: 5.0, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
+            >
               <div className="hero-brand-logo-wrap">
                 <img src={logo} alt="Swarali Nursing Services" className="hero-brand-logo" />
               </div>
@@ -198,7 +203,7 @@ function Home() {
             </motion.div>
 
             <div className="hero-tagline-row">
-              <motion.span variants={fadeUp} className="tag premium-tag">
+              <motion.span variants={fadeUp} className="tag premium-tag hero-top-tagline">
                 Providing Excellent Care Since 2015
               </motion.span>
             </div>
