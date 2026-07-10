@@ -187,7 +187,22 @@ function Home() {
             initial={prefersReducedMotion ? false : "hidden"}
             animate="show"
           >
-            <motion.span variants={fadeUp} className="tag premium-tag">
+            <motion.div
+              variants={fadeUp}
+              className="hero-brand-strip"
+              animate={prefersReducedMotion ? undefined : { y: [0, -8, 0] }}
+              transition={prefersReducedMotion ? undefined : { duration: 5.0, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
+            >
+              <div className="hero-brand-logo-wrap">
+                <img src={logo} alt="Swarali Nursing Services" className="hero-brand-logo" />
+              </div>
+              <div className="hero-brand-stats">
+                <span className="counter-inline"><Counter end={500} suffix="+" /> Happy Patients</span>
+                <span>24/7 Support</span>
+              </div>
+            </motion.div>
+
+            <motion.span variants={fadeUp} className="tag premium-tag hero-tagline-badge">
               Providing Excellent Care Since 2015
             </motion.span>
             <motion.h1 variants={fadeUp}>
@@ -250,21 +265,6 @@ function Home() {
               </div>
             </motion.div>
 
-            <motion.div
-              className="hero-brand-bar liquid-glass"
-              animate={prefersReducedMotion ? undefined : { y: [0, -8, 0] }}
-              transition={prefersReducedMotion ? undefined : { duration: 5.0, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
-            >
-              <img src={logo} alt="Swarali Nursing Services" className="hero-brand-bar-logo" />
-              <div className="hero-brand-bar-copy">
-                <strong>Swarali</strong>
-                <span>Nursing Services &amp; Surgicals</span>
-                <ul className="hero-brand-bar-meta" aria-label="Key stats">
-                  <li><Counter end={500} suffix="+" /> Happy Patients</li>
-                  <li>24/7 Support</li>
-                </ul>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </section>
