@@ -37,7 +37,7 @@ body {
   background:
     radial-gradient(circle at top left, rgba(0, 59, 149, 0.18), transparent 26%),
     radial-gradient(circle at top right, rgba(var(--soft-yellow-rgb), 0.24), transparent 24%),
-    linear-gradient(180deg, #ffffff 0%, #f5f9ff 46%, #fffaf1 100%);
+    linear-gradient(180deg, rgb(128, 255, 255) 0%, rgb(128, 255, 255) 46%, rgb(0, 128, 255) 100%);
   overflow-x: hidden;
   position: relative;
 }
@@ -123,7 +123,7 @@ img {
 .premium-page-bg,
 .page-banner {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(234, 243, 255, 0.96) 56%, rgba(255, 249, 236, 0.96));
+    linear-gradient(180deg, rgb(128, 255, 255), rgba(234, 243, 255, 0.96) 56%, rgb(0, 128, 255));
 }
 
 .section-surface-cream {
@@ -1269,7 +1269,7 @@ img {
   top: 0;
   z-index: 1100;
   backdrop-filter: blur(16px) saturate(140%);
-  background: linear-gradient(120deg, rgba(255, 255, 255, 0.86), rgba(234, 243, 255, 0.9), rgba(255, 247, 220, 0.86), rgba(255, 255, 255, 0.9));
+  background: linear-gradient(120deg, rgb(0, 0, 255), rgba(234, 243, 255, 0.9), rgba(255, 247, 220, 0.86), rgb(128, 0, 255));
   background-size: 220% 220%;
   animation: navGradient 9s ease infinite;
   border-bottom: 1px solid rgba(255, 255, 255, 0.54);
