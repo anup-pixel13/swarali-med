@@ -87,30 +87,13 @@ function Home() {
         <div className="container hero-grid">
           <div className="hero-content" data-aos="fade-right">
             <div className="hero-brand-strip">
-              <div className="hero-logo-card liquid-glass">
-                <img
-                  src="/logo.png"
-                  alt="Swarali Nursing Services Logo"
-                  className="hero-logo-large"
-                />
-              </div>
-
-              <div className="hero-meta-card liquid-glass">
-                <div className="hero-tagline-pill">
-                  Providing Excellent Care Since 2015
-                </div>
-
-                <div className="hero-meta-stats">
-                  <div className="hero-meta-stat">
-                    <strong>500+</strong>
-                    <span>Happy Patients</span>
-                  </div>
-
-                  <div className="hero-meta-stat">
-                    <strong>24/7</strong>
-                    <span>Support</span>
-                  </div>
-                </div>
+              <img
+                src="/logo.png"
+                alt="Swarali Nursing Services Logo"
+                className="hero-logo-large"
+              />
+              <div className="hero-tagline-pill">
+                Providing Excellent Care Since 2015
               </div>
             </div>
 
@@ -124,6 +107,18 @@ function Home() {
               doctor visits, physiotherapy, blood tests and medical equipment rental
               & sales — right at your doorstep.
             </p>
+
+            <div className="hero-meta-stats" role="group" aria-label="Swarali care statistics">
+              <div className="hero-meta-stat">
+                <strong>500+</strong>
+                <span>Happy Patients</span>
+              </div>
+
+              <div className="hero-meta-stat">
+                <strong>24/7</strong>
+                <span>Support</span>
+              </div>
+            </div>
 
             <div className="hero-actions">
               <Link to="/contact" className="btn">Book Service</Link>
