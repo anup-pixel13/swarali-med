@@ -360,9 +360,9 @@ img {
 
 /* HERO */
 .hero {
-  --hero-logo-size-min: 150px;
-  --hero-logo-size-fluid: 16vw;
-  --hero-logo-size-max: 180px;
+  --hero-logo-size-min: 240px;
+  --hero-logo-size-fluid: 24vw;
+  --hero-logo-size-max: 300px;
   --hero-brand-max-width: 420px;
   position: relative;
   padding: calc(var(--nav-height) + 12px) 0 90px;
@@ -438,14 +438,19 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: clamp(var(--hero-logo-size-min), var(--hero-logo-size-fluid), var(--hero-logo-size-max));
+  max-width: 100%;
+  aspect-ratio: 1.45;
+  overflow: hidden;
 }
 
 .hero-brand-logo {
-  width: clamp(var(--hero-logo-size-min), var(--hero-logo-size-fluid), var(--hero-logo-size-max));
+  width: 196%;
+  max-width: none;
   height: auto;
   object-fit: contain;
   display: block;
+  transform: translate(-24%, -15%);
   filter: drop-shadow(0 14px 30px rgba(0, 59, 149, 0.14));
 }
 
@@ -1822,7 +1827,12 @@ img {
   }
 
   .hero-brand-logo {
-    width: clamp(116px, 34vw, 130px);
+    width: 196%;
+    transform: translate(-24%, -15%);
+  }
+
+  .hero-brand-logo-wrap {
+    width: clamp(190px, 54vw, 240px);
   }
 
   .hero-brand-stats {
