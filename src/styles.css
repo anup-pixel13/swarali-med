@@ -1898,8 +1898,8 @@ img {
   }
 }
 .hero-tagline-row {
-  display: flex;
-  justify-content: flex-start;
+  display: inline-flex;
+  align-items: center;
   margin-bottom: 16px;
   padding-left: 4px;
 }
