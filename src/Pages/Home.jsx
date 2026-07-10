@@ -48,7 +48,6 @@ const PARALLAX_IMAGES = {
   primary: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=80",
   secondary: "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1600&q=80",
 };
-const HERO_BRAND_LOGO_PATH = logo;
 
 function Home() {
   const prefersReducedMotion = useReducedMotion();
@@ -190,10 +189,10 @@ function Home() {
           >
             <motion.div variants={fadeUp} className="hero-brand-strip" aria-label="Swarali Nursing Services logo and statistics">
               <div className="hero-brand-logo-wrap">
-                <img src={HERO_BRAND_LOGO_PATH} alt="Swarali Nursing Services" className="hero-brand-logo" />
+                <img src={logo} alt="Swarali Nursing Services" className="hero-brand-logo" />
               </div>
               <div className="hero-brand-stats">
-                <span><span className="counter-inline"><Counter end={500} suffix="+" /></span> Happy Patients</span>
+                <span className="counter-inline"><Counter end={500} suffix="+" /> Happy Patients</span>
                 <span>24/7 Support</span>
               </div>
             </motion.div>
