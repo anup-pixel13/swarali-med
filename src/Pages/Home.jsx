@@ -48,6 +48,7 @@ const PARALLAX_IMAGES = {
   primary: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=80",
   secondary: "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1600&q=80",
 };
+const HERO_BRAND_LOGO_PATH = logo;
 
 function Home() {
   const prefersReducedMotion = useReducedMotion();
@@ -187,9 +188,21 @@ function Home() {
             initial={prefersReducedMotion ? false : "hidden"}
             animate="show"
           >
-            <motion.span variants={fadeUp} className="tag premium-tag">
-              Providing Excellent Care Since 2015
-            </motion.span>
+            <motion.div variants={fadeUp} className="hero-brand-strip" aria-label="Hero logo and key stats">
+              <div className="hero-brand-logo-wrap">
+                <img src={HERO_BRAND_LOGO_PATH} alt="Swarali Nursing Services" className="hero-brand-logo" />
+              </div>
+              <div className="hero-brand-stats" aria-label="Key stats">
+                <span><span className="counter-inline"><Counter end={500} suffix="+" /></span> Happy Patients</span>
+                <span>24/7 Support</span>
+              </div>
+            </motion.div>
+
+            <div className="hero-tagline-row">
+              <motion.span variants={fadeUp} className="tag premium-tag hero-top-tagline">
+                Providing Excellent Care Since 2015
+              </motion.span>
+            </div>
             <motion.h1 variants={fadeUp}>
               Compassionate Home Healthcare
               <span> & Medical Equipment Support</span>
@@ -250,21 +263,6 @@ function Home() {
               </div>
             </motion.div>
 
-            <motion.div
-              className="hero-brand-bar liquid-glass"
-              animate={prefersReducedMotion ? undefined : { y: [0, -8, 0] }}
-              transition={prefersReducedMotion ? undefined : { duration: 5.0, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
-            >
-              <img src={logo} alt="Swarali Nursing Services" className="hero-brand-bar-logo" />
-              <div className="hero-brand-bar-copy">
-                <strong>Swarali</strong>
-                <span>Nursing Services &amp; Surgicals</span>
-                <ul className="hero-brand-bar-meta" aria-label="Key stats">
-                  <li><Counter end={500} suffix="+" /> Happy Patients</li>
-                  <li>24/7 Support</li>
-                </ul>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </section>
