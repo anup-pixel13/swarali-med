@@ -1,6 +1,6 @@
-import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { FaBars, FaTimes, FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
+import { Link, NavLink } from "react-router-dom";
+import { FaBars, FaPhoneAlt, FaTimes, FaWhatsapp } from "react-icons/fa";
 import logo from "../assets/logo.png";
 
 function Navbar() {
@@ -8,18 +8,17 @@ function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => setScrolled(window.scrollY > 24);
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const closeMenu = () => setOpen(false);
-
   return (
     <header className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
       <div className="container navbar-inner">
-        <Link to="/" className="brand brand-large" onClick={closeMenu}>
-          <img src={logo} alt="Swarali Nursing Services Logo" className="brand-logo-img large-logo" />
+        <Link to="/" className="brand" aria-label="Swarali Nursing Services home">
+          <img src={logo} alt="Swarali Nursing Services Logo" className="brand-logo-img" />
           <div className="brand-copy">
             <h2>Swarali</h2>
             <p>Nursing Services & Surgicals</p>
@@ -27,23 +26,25 @@ function Navbar() {
         </Link>
 
         <button
+          type="button"
           className="menu-toggle"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
+          onClick={() => setOpen((current) => !current)}
+          aria-label="Toggle navigation menu"
+          aria-expanded={open}
         >
           {open ? <FaTimes /> : <FaBars />}
         </button>
 
         <nav className={`nav-links ${open ? "active" : ""}`}>
-          <NavLink to="/" onClick={closeMenu}>Home</NavLink>
-          <NavLink to="/about" onClick={closeMenu}>About</NavLink>
-          <NavLink to="/services" onClick={closeMenu}>Services</NavLink>
-          <NavLink to="/equipment" onClick={closeMenu}>Medical Equipment</NavLink>
-          <NavLink to="/rental-policy" onClick={closeMenu}>Rental Policy</NavLink>
-          <NavLink to="/contact" onClick={closeMenu}>Contact</NavLink>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/about">About</NavLink>
+          <NavLink to="/services">Services</NavLink>
+          <NavLink to="/equipment">Medical Equipment</NavLink>
+          <NavLink to="/rental-policy">Rental Policy</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
 
           <div className="nav-cta-group">
-            <a href="tel:+918779508016" className="btn btn-sm btn-outline" onClick={closeMenu}>
+            <a href="tel:+918779508016" className="btn btn-sm btn-outline">
               <FaPhoneAlt />
               Call
             </a>
@@ -52,7 +53,6 @@ function Navbar() {
               target="_blank"
               rel="noreferrer"
               className="btn btn-sm"
-              onClick={closeMenu}
             >
               <FaWhatsapp />
               WhatsApp

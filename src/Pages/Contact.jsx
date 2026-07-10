@@ -1,49 +1,47 @@
+import { motion, useReducedMotion } from "framer-motion";
+import { FaAmbulance, FaClock, FaMapMarkerAlt, FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 import EnquiryForm from "../components/EnquiryForm";
-import { FaPhoneAlt, FaWhatsapp, FaMapMarkerAlt, FaClock, FaAmbulance } from "react-icons/fa";
 
 function Contact() {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
-    <section className="section premium-page-bg">
+    <section className="section premium-page-bg section-surface section-surface-cream">
       <div className="container">
-        <div className="premium-page-head" data-aos="fade-up">
+        <motion.div className="premium-page-head" initial={prefersReducedMotion ? false : { opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.45 }}>
           <span className="tag premium-tag">Contact Us</span>
           <h1>Book Healthcare Service or Equipment Enquiry</h1>
           <p>
             Reach out for nursing care, doctor visits, attendants, physiotherapy,
             blood tests and medical equipment rental or purchase.
           </p>
-        </div>
+        </motion.div>
 
         <div className="contact-grid premium-contact-grid">
           <div className="contact-info-stack">
-            <div className="card contact-info-card glass-premium-card" data-aos="fade-right">
+            <motion.div className="card contact-info-card liquid-glass" initial={prefersReducedMotion ? false : { opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.35 }}>
               <h3>Swarali Nursing Services & Surgicals</h3>
 
               <div className="contact-line">
                 <FaPhoneAlt />
                 <span>+91 8779508016</span>
               </div>
-
               <div className="contact-line">
                 <FaPhoneAlt />
                 <span>+91 7977506929</span>
               </div>
-
               <div className="contact-line">
                 <FaWhatsapp />
                 <span>WhatsApp Support Available</span>
               </div>
-
               <div className="contact-line">
                 <FaMapMarkerAlt />
                 <span>Navi Mumbai, Maharashtra</span>
               </div>
-
               <div className="contact-line">
                 <FaClock />
                 <span>24/7 Customer Support</span>
               </div>
-
               <div className="contact-line">
                 <FaAmbulance />
                 <span>Quick assistance for patient care and medical equipment enquiry</span>
@@ -60,14 +58,13 @@ function Contact() {
                   WhatsApp
                 </a>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="card map-card glass-premium-card" data-aos="fade-up">
+            <motion.div className="card map-card liquid-glass" initial={prefersReducedMotion ? false : { opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.35, delay: 0.05 }}>
               <h3>Our Service Area</h3>
               <p>
                 We provide home healthcare and equipment services in Navi Mumbai and nearby locations.
               </p>
-
               <div className="map-frame">
                 <iframe
                   title="Swarali Nursing Services Location"
@@ -78,14 +75,14 @@ function Contact() {
                   allowFullScreen=""
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
+                />
               </div>
-            </div>
+            </motion.div>
           </div>
 
-          <div data-aos="fade-left">
+          <motion.div initial={prefersReducedMotion ? false : { opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.35 }}>
             <EnquiryForm />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

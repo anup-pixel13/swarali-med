@@ -1,15 +1,17 @@
+import { motion, useReducedMotion } from "framer-motion";
 import {
-  FaUserMd,
-  FaClinicMedical,
-  FaHandsHelping,
-  FaProcedures,
-  FaFlask,
-  FaHeartbeat,
-  FaWheelchair,
   FaBaby,
+  FaClinicMedical,
+  FaFlask,
+  FaHandsHelping,
+  FaHeartbeat,
+  FaProcedures,
+  FaUserMd,
+  FaWheelchair,
 } from "react-icons/fa";
 
 function Services() {
+  const prefersReducedMotion = useReducedMotion();
   const items = [
     {
       icon: <FaUserMd />,
@@ -54,56 +56,62 @@ function Services() {
   ];
 
   return (
-    <section className="section premium-page-bg">
+    <section className="section premium-page-bg section-surface section-surface-blue">
       <div className="container">
-        <div className="premium-page-head" data-aos="fade-up">
+        <motion.div className="premium-page-head" initial={prefersReducedMotion ? false : { opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.45 }}>
           <span className="tag premium-tag">Our Services</span>
           <h1>Complete Home Healthcare Support</h1>
           <p>
             Trusted, timely and patient-focused healthcare services designed to
             support families with comfort, dignity and professional care at home.
           </p>
-        </div>
+        </motion.div>
 
         <div className="premium-services-grid">
           {items.map((item, index) => (
-            <div
+            <motion.div
               key={item.title}
-              className="card premium-service-card"
-              data-aos="fade-up"
-              data-aos-delay={index * 70}
+              className="card premium-service-card liquid-glass"
+              initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={prefersReducedMotion ? undefined : { y: -10, rotate: index % 2 === 0 ? -0.45 : 0.45 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.3, delay: index * 0.05 }}
             >
               <div className="service-icon premium-service-icon">{item.icon}</div>
               <h3>{item.title}</h3>
               <p>{item.desc}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         <div className="services-highlight-grid premium-highlight-row">
-          <div className="card glass-premium-card" data-aos="fade-up">
-            <h3>Professional & Verified Staff</h3>
-            <p>
-              We aim to provide dependable support through a service approach focused on
-              professionalism, patient safety and reliable home assistance.
-            </p>
-          </div>
-
-          <div className="card glass-premium-card" data-aos="fade-up" data-aos-delay="100">
-            <h3>Comfort of Home, Quality of Care</h3>
-            <p>
-              Patients receive care in a familiar environment while families benefit from
-              structured support and practical service coordination.
-            </p>
-          </div>
-
-          <div className="card glass-premium-card" data-aos="fade-up" data-aos-delay="200">
-            <h3>Responsive Service Support</h3>
-            <p>
-              From urgent patient requirements to equipment-related enquiries, we focus on
-              timely communication and smooth support delivery.
-            </p>
-          </div>
+          {[
+            {
+              title: "Professional & Verified Staff",
+              desc: "We aim to provide dependable support through a service approach focused on professionalism, patient safety and reliable home assistance.",
+            },
+            {
+              title: "Comfort of Home, Quality of Care",
+              desc: "Patients receive care in a familiar environment while families benefit from structured support and practical service coordination.",
+            },
+            {
+              title: "Responsive Service Support",
+              desc: "From urgent patient requirements to equipment-related enquiries, we focus on timely communication and smooth support delivery.",
+            },
+          ].map((item, index) => (
+            <motion.div
+              key={item.title}
+              className="card liquid-glass"
+              initial={prefersReducedMotion ? false : { opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.3, delay: index * 0.08 }}
+            >
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
