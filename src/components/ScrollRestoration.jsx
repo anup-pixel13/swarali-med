@@ -2,6 +2,9 @@ import { useEffect, useRef } from "react";
 import { useLocation, useNavigationType } from "react-router-dom";
 
 const STORAGE_KEY = "swarali_scroll_positions";
+const HAS_NAV_KEY = "swarali_has_nav";
+
+export { HAS_NAV_KEY };
 
 function getPositions() {
   try {
@@ -80,13 +83,18 @@ function ScrollRestoration() {
         window.scrollTo({
           left: saved?.x ?? 0,
           top: saved?.y ?? 0,
-          behavior: "instant",
+          behavior: "auto",
         });
       });
     } else {
-      // PUSH or REPLACE — always start at the top
+      // PUSH or REPLACE — always start at the top; also mark that navigation has occurred
+      try {
+        window.sessionStorage.setItem(HAS_NAV_KEY, "1");
+      } catch {
+        // ignore
+      }
       requestAnimationFrame(() => {
-        window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+        window.scrollTo({ top: 0, left: 0, behavior: "auto" });
       });
     }
   }, [location.key, location.hash, navigationType]);
