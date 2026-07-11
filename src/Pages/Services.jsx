@@ -9,6 +9,7 @@ import {
   FaUserMd,
   FaWheelchair,
 } from "react-icons/fa";
+import BackButton from "../components/BackButton";
 
 function Services() {
   const prefersReducedMotion = useReducedMotion();
@@ -58,6 +59,7 @@ function Services() {
   return (
     <section className="section premium-page-bg section-surface section-surface-blue">
       <div className="container">
+        <BackButton />
         <motion.div className="premium-page-head" initial={prefersReducedMotion ? false : { opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.45 }}>
           <span className="tag premium-tag">Our Services</span>
           <h1>Complete Home Healthcare Support</h1>

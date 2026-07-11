@@ -4,7 +4,7 @@ import BackToTopButton from "./components/BackToTopButton";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import ScrollProgress from "./components/ScrollProgress";
-import ScrollToTop from "./components/ScrollToTop";
+import ScrollRestoration from "./components/ScrollRestoration";
 import WhatsAppButton from "./components/WhatsAppButton";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
@@ -36,7 +36,7 @@ function App() {
 
   return (
     <>
-      <ScrollToTop />
+      <ScrollRestoration />
       <ScrollProgress />
       <Navbar />
       <WhatsAppButton />
