@@ -2,6 +2,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useMemo, useRef, useState } from "react";
 import EquipmentCard from "../components/EquipmentCard";
 import EquipmentModal from "../components/EquipmentModal";
+import BackButton from "../components/BackButton";
 import items from "../data/equipment.json";
 
 const PER_PAGE = 12;
@@ -133,6 +134,7 @@ function Equipment() {
   return (
     <section className="section premium-page-bg section-surface section-surface-light">
       <div className="container">
+        <BackButton />
         <motion.div className="premium-page-head" initial={prefersReducedMotion ? false : { opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.45 }}>
           <span className="tag premium-tag">Medical Equipment on Rent & Sale</span>
           <h1>Browse Equipment For Home Patient Care</h1>

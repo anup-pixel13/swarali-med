@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FaHeartbeat } from "react-icons/fa";
+import BackButton from "../components/BackButton";
 
 function NotFound() {
   const prefersReducedMotion = useReducedMotion();
@@ -8,6 +9,7 @@ function NotFound() {
   return (
     <section className="section premium-page-bg section-surface section-surface-light not-found-section">
       <div className="container">
+        <BackButton />
         <motion.div
           className="card not-found-card liquid-glass"
           initial={prefersReducedMotion ? false : { opacity: 0, y: 24 }}
