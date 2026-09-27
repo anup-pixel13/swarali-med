@@ -2,12 +2,12 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useState } from "react";
 import { FaPlus } from "react-icons/fa";
 
-function FAQ({ items }) {
+function FAQ({ items, sectionClassName = "" }) {
   const prefersReducedMotion = useReducedMotion();
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="section section-surface section-surface-cream faq-section">
+    <section className={`section section-surface section-surface-cream faq-section ${sectionClassName}`.trim()}>
       <div className="container">
         <motion.div
           className="section-title"

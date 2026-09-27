@@ -4,6 +4,7 @@ import EquipmentCard from "../components/EquipmentCard";
 import EquipmentModal from "../components/EquipmentModal";
 import BackButton from "../components/BackButton";
 import items from "../data/equipment.json";
+import "./Equipment.css";
 
 const PER_PAGE = 12;
 const STORAGE_KEY = "swarali_equipment_state";
@@ -132,7 +133,7 @@ function Equipment() {
   const activeFilters = [category !== "All" ? category : null, availability !== "All" ? availability : null, query ? `“${query}”` : null].filter(Boolean);
 
   return (
-    <section className="section premium-page-bg section-surface section-surface-light">
+    <section className="section premium-page-bg section-surface equipment-page-section">
       <div className="container">
         <BackButton />
         <motion.div className="premium-page-head" initial={prefersReducedMotion ? false : { opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.45 }}>

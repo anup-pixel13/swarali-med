@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import App from "./App";
-import "./styles.css";
+import "./index.css";
 
 AOS.init({
   duration: 900,

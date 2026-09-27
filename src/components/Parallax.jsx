@@ -2,7 +2,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 
-function Parallax({ badge, title, text, ctaText, ctaLink, image, align = "left" }) {
+function Parallax({ badge, title, text, ctaText, ctaLink, image, align = "left", sectionClassName = "" }) {
   const prefersReducedMotion = useReducedMotion();
   const [fixedBackground, setFixedBackground] = useState(false);
 
@@ -37,7 +37,7 @@ function Parallax({ badge, title, text, ctaText, ctaLink, image, align = "left" 
 
   return (
     <section
-      className={`parallax-section ${align === "right" ? "parallax-right" : ""}`}
+      className={`parallax-section ${align === "right" ? "parallax-right" : ""} ${sectionClassName}`.trim()}
       style={{
         backgroundImage: `linear-gradient(135deg, rgba(0, 45, 114, 0.74), rgba(0, 59, 149, 0.58)), url(${image})`,
         backgroundAttachment: fixedBackground ? "fixed" : "scroll",

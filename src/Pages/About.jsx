@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { FaClock, FaHeart, FaHospitalUser, FaNotesMedical, FaShieldAlt, FaUserNurse } from "react-icons/fa";
 import BackButton from "../components/BackButton";
+import "./About.css";
 
 function About() {
   const prefersReducedMotion = useReducedMotion();

@@ -1,0 +1,130 @@
+.contact-page-section {
+  background:
+    radial-gradient(circle at 10% 10%, rgba(0, 59, 149, 0.14), transparent 26%),
+    radial-gradient(circle at 88% 10%, rgba(var(--soft-yellow-rgb), 0.18), transparent 22%),
+    linear-gradient(180deg, rgba(232, 244, 255, 0.99), rgba(216, 236, 255, 0.97) 52%, rgba(226, 242, 255, 0.98));
+}
+
+.contact-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.contact-info-stack {
+  display: grid;
+  gap: 20px;
+}
+
+.contact-info-card,
+.map-card,
+.enquiry-form {
+  display: grid;
+  gap: 16px;
+}
+
+.contact-info-card,
+.map-card,
+.enquiry-form {
+  z-index: 1;
+}
+
+.contact-info-card h3,
+.map-card h3,
+.enquiry-form h3 {
+  margin: 0;
+  color: var(--text-navy);
+}
+
+.enquiry-form h3 {
+  font-weight: 800;
+}
+
+.enquiry-form > p {
+  color: #3a4d73;
+}
+
+.contact-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.contact-line svg {
+  color: var(--primary-blue);
+}
+
+.contact-action-row,
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.map-frame {
+  overflow: hidden;
+  border-radius: 22px;
+}
+
+.enquiry-form p {
+  margin: 0;
+}
+
+.hidden-honeypot {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.enquiry-form input,
+.enquiry-form textarea {
+  width: 100%;
+  min-height: 54px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(0, 59, 149, 0.12);
+  background: rgba(255, 255, 255, 0.86);
+  color: var(--text-navy);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.enquiry-form input::placeholder,
+.enquiry-form textarea::placeholder {
+  color: #8593ad;
+}
+
+.enquiry-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.enquiry-form input:focus,
+.enquiry-form textarea:focus {
+  outline: none;
+  border-color: rgba(0, 59, 149, 0.32);
+  box-shadow: 0 0 0 4px rgba(0, 59, 149, 0.1), 0 0 0 8px rgba(var(--soft-yellow-rgb), 0.18);
+}
+
+.success,
+.error-text {
+  padding: 14px 16px;
+  border-radius: 16px;
+  font-weight: 600;
+}
+
+.success {
+  background: rgba(39, 174, 96, 0.12);
+  color: #20754b;
+}
+
+.error-text {
+  background: rgba(222, 83, 83, 0.12);
+  color: #a13b3b;
+}
+
+@media (max-width: 1100px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}

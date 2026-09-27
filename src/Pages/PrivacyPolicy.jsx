@@ -1,4 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
+import "./PrivacyPolicy.css";
 
 function PrivacyPolicy() {
   const prefersReducedMotion = useReducedMotion();
@@ -38,7 +39,7 @@ function PrivacyPolicy() {
   ];
 
   return (
-    <section className="section premium-page-bg section-surface section-surface-cream">
+    <section className="section premium-page-bg section-surface privacy-policy-page">
       <div className="container">
         <motion.div className="premium-page-head" initial={prefersReducedMotion ? false : { opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.45 }}>
           <span className="tag premium-tag">Privacy Policy</span>
