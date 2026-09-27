@@ -8,7 +8,7 @@ function NotFound() {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <section className="section premium-page-bg section-surface not-found-section">
+    <section className="section section-surface not-found-section">
       <div className="container">
         <BackButton />
         <motion.div

@@ -1,5 +1,4 @@
-.about-page,
-.about-page-section {
+.about-page {
   background:
     radial-gradient(circle at 12% 8%, rgba(0, 59, 149, 0.18), transparent 28%),
     radial-gradient(circle at 86% 6%, rgba(var(--soft-yellow-rgb), 0.22), transparent 26%),
