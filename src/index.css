@@ -16,7 +16,7 @@
   --shadow-glow: 0 24px 60px rgba(0, 59, 149, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.3) inset;
   --radius: 24px;
   --radius-lg: 28px;
-  --container: min(1180px, 92vw);
+  --container: min(1200px, calc(100% - 48px));
   --transition: 0.3s ease;
   --nav-height: 84px;
 }
@@ -160,6 +160,12 @@ img {
 @media (max-width: 900px) {
   :root {
     --nav-height: 74px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --container: min(1200px, calc(100% - 32px));
   }
 }
 
