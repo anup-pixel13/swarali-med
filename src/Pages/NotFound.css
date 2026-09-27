@@ -1,4 +1,4 @@
-.not-found-section {
+.section.not-found-section {
   min-height: calc(100vh - 240px);
   display: flex;
   align-items: center;
