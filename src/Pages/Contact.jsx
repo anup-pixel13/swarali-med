@@ -2,12 +2,13 @@ import { motion, useReducedMotion } from "framer-motion";
 import { FaAmbulance, FaClock, FaMapMarkerAlt, FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 import EnquiryForm from "../components/EnquiryForm";
 import BackButton from "../components/BackButton";
+import "./Contact.css";
 
 function Contact() {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <section className="section premium-page-bg section-surface section-surface-cream">
+    <section className="section premium-page-bg section-surface contact-page-section">
       <div className="container">
         <BackButton />
         <motion.div className="premium-page-head" initial={prefersReducedMotion ? false : { opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.45 }}>

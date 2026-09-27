@@ -2,12 +2,13 @@ import { motion, useReducedMotion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FaHeartbeat } from "react-icons/fa";
 import BackButton from "../components/BackButton";
+import "./NotFound.css";
 
 function NotFound() {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <section className="section premium-page-bg section-surface section-surface-light not-found-section">
+    <section className="section premium-page-bg section-surface not-found-section">
       <div className="container">
         <BackButton />
         <motion.div

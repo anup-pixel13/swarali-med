@@ -2,7 +2,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
-function Testimonials({ items }) {
+function Testimonials({ items, sectionClassName = "" }) {
   const prefersReducedMotion = useReducedMotion();
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -21,7 +21,7 @@ function Testimonials({ items }) {
   const activeItem = items[activeIndex];
 
   return (
-    <section className="section section-surface section-surface-blue">
+    <section className={`section section-surface section-surface-blue ${sectionClassName}`.trim()}>
       <div className="container">
         <motion.div
           className="section-title"

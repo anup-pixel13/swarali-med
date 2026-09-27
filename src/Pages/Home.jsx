@@ -21,6 +21,7 @@ import FAQ from "../components/FAQ";
 import Parallax from "../components/Parallax";
 import Testimonials from "../components/Testimonials";
 import logo from "../assets/logo.png";
+import "./Home.css";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -182,7 +183,7 @@ function Home() {
 
   return (
     <>
-      <section className="hero lighter-hero">
+      <section className="hero home-hero">
         <div className="hero-bg-shape hero-shape-1" />
         <div className="hero-bg-shape hero-shape-2" />
         <div className="container hero-grid">
@@ -279,7 +280,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="trust-strip">
+      <section className="trust-strip home-trust-strip">
         <div className="container trust-strip-inner">
           {[
             "Trained & Verified Staff",
@@ -293,7 +294,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="section section-surface section-surface-cream icon-strip-section">
+      <section className="section section-surface home-services-snapshot">
         <div className="container">
           <motion.div className="section-title" initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.45 }}>
             <span className="tag premium-tag">Services Snapshot</span>
@@ -319,6 +320,7 @@ function Home() {
       </section>
 
       <Parallax
+        sectionClassName="home-care-parallax"
         badge="Compassionate Care"
         title="Professional support that reaches your family with comfort and confidence"
         text="From home nursing and bedside support to responsive coordination, we help families arrange trusted care at the right time."
@@ -327,7 +329,7 @@ function Home() {
         image={PARALLAX_IMAGES.primary}
       />
 
-      <section className="section section-surface section-surface-light premium-page-bg">
+      <section className="section section-surface premium-page-bg home-about-overview">
         <div className="container">
           <motion.div className="section-title" initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.45 }}>
             <span className="tag premium-tag">Who We Are</span>
@@ -354,7 +356,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="section section-surface section-surface-blue services-premium-section">
+      <section className="section section-surface home-services-highlight">
         <div className="container">
           <motion.div className="section-title" initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.45 }}>
             <span className="tag premium-tag">Services We Provide</span>
@@ -374,6 +376,7 @@ function Home() {
       </section>
 
       <Parallax
+        sectionClassName="home-equipment-parallax"
         badge="Reliable Equipment & Care"
         title="Responsive equipment access and patient support for home recovery"
         text="Get dependable help with nursing, attendants and medical equipment enquiries designed around your family’s home care needs."
@@ -383,7 +386,7 @@ function Home() {
         align="right"
       />
 
-      <section className="section section-surface section-surface-yellow">
+      <section className="section section-surface home-why-choose">
         <div className="container">
           <motion.div className="section-title" initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.45 }}>
             <span className="tag premium-tag">Why Choose Swarali?</span>
@@ -410,11 +413,11 @@ function Home() {
         </div>
       </section>
 
-      <EquipmentPreview />
-      <Testimonials items={testimonials} />
-      <FAQ items={faqs} />
+      <EquipmentPreview sectionClassName="home-equipment-preview" />
+      <Testimonials items={testimonials} sectionClassName="home-testimonials" />
+      <FAQ items={faqs} sectionClassName="home-faq" />
 
-      <section className="section emergency-strip premium-emergency-strip">
+      <section className="section premium-emergency-strip home-cta">
         <div className="container cta-row">
           <motion.div initial={prefersReducedMotion ? false : { opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.4 }} transition={{ duration: 0.45 }}>
             <span className="tag tag-light">Emergency Support</span>

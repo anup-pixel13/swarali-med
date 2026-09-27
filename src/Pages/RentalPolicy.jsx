@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
 import BackButton from "../components/BackButton";
+import "./RentalPolicy.css";
 
 function RentalPolicy() {
   const prefersReducedMotion = useReducedMotion();
@@ -39,7 +40,7 @@ function RentalPolicy() {
   ];
 
   return (
-    <section className="section premium-page-bg section-surface section-surface-light">
+    <section className="section premium-page-bg section-surface rental-policy-page">
       <div className="container">
         <BackButton />
         <motion.div className="premium-page-head" initial={prefersReducedMotion ? false : { opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.45 }}>

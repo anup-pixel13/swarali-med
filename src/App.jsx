@@ -1,3 +1,4 @@
+import "./App.css";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Route, Routes, useLocation } from "react-router-dom";
 import BackToTopButton from "./components/BackToTopButton";

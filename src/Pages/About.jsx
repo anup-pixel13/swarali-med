@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { FaClock, FaHeart, FaHospitalUser, FaNotesMedical, FaShieldAlt, FaUserNurse } from "react-icons/fa";
 import BackButton from "../components/BackButton";
+import "./About.css";
 
 function About() {
   const prefersReducedMotion = useReducedMotion();
@@ -39,7 +40,7 @@ function About() {
   ];
 
   return (
-    <section className="section premium-page-bg section-surface about-page-section">
+    <section className="section premium-page-bg section-surface about-page">
       <div className="container">
         <BackButton />
         <motion.div className="premium-page-head" initial={prefersReducedMotion ? false : { opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.45 }}>

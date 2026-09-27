@@ -2,12 +2,12 @@ import { motion, useReducedMotion } from "framer-motion";
 import { Link } from "react-router-dom";
 import items from "../data/equipment.json";
 
-function EquipmentPreview() {
+function EquipmentPreview({ sectionClassName = "" }) {
   const prefersReducedMotion = useReducedMotion();
   const featuredItems = items.slice(0, 4);
 
   return (
-    <section className="section section-surface section-surface-light">
+    <section className={`section section-surface section-surface-light ${sectionClassName}`.trim()}>
       <div className="container">
         <motion.div
           className="section-title"
