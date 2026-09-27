@@ -1,5 +1,7 @@
 .container {
-  width: var(--container);
+  width: 100%;
+  max-width: 1200px;
+  padding-inline: 24px;
   margin: 0 auto;
 }
 
@@ -951,6 +953,10 @@
 }
 
 @media (max-width: 640px) {
+  .container {
+    padding-inline: 16px;
+  }
+
   .card,
   .parallax-card,
   .modal-card,
