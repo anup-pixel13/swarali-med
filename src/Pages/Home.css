@@ -419,13 +419,9 @@
     linear-gradient(180deg, rgba(255, 252, 244, 0.98), rgba(247, 241, 220, 0.96) 52%, rgba(255, 249, 236, 0.98));
 }
 
-.home-cta,
-.premium-emergency-strip {
+.home-cta {
   position: relative;
   overflow: hidden;
-}
-
-.home-cta {
   background: linear-gradient(120deg, rgb(128, 255, 255), #003b95, #1d5fd1, #355f9b, rgb(116, 214, 211));
   background-size: 260% 260%;
   animation: deepGradient 12s ease infinite;
