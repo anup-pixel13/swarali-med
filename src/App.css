@@ -1,8 +1,5 @@
 .container {
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 1200px;
-  padding-inline: 24px;
+  width: var(--container);
   margin: 0 auto;
 }
 
@@ -954,10 +951,6 @@
 }
 
 @media (max-width: 640px) {
-  .container {
-    padding-inline: 16px;
-  }
-
   .card,
   .parallax-card,
   .modal-card,

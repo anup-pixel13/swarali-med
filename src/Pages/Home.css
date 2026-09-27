@@ -278,7 +278,8 @@
 
 .home-trust-strip {
   background:
-    linear-gradient(120deg, rgba(0, 45, 114, 0.92), rgba(0, 59, 149, 0.9)),
+    linear-gradient(120deg, rgba(0, 32, 82, 0.96), rgba(0, 45, 114, 0.94) 55%, rgba(0, 59, 149, 0.92)),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18)),
     url("/equipment/patient-monitor.jpg");
   background-size: cover;
   background-position: center;
@@ -462,11 +463,36 @@
   position: relative;
   overflow: hidden;
   background:
-    linear-gradient(120deg, rgba(0, 45, 114, 0.9), rgba(29, 95, 209, 0.84), rgba(53, 95, 155, 0.88)),
+    linear-gradient(120deg, rgba(0, 32, 82, 0.96), rgba(0, 45, 114, 0.93), rgba(29, 95, 209, 0.9), rgba(53, 95, 155, 0.92)),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url("/equipment/oxygen-concentrator-10l.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.home-cta .btn-outline {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.34);
+}
+
+.home-cta .btn-outline:hover,
+.home-cta .btn-outline:focus-visible {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.home-cta .btn-outline:disabled,
+.home-cta .btn-outline[aria-disabled="true"] {
+  color: rgba(255, 255, 255, 0.66);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.22);
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
 }
 
 .cta-row {
