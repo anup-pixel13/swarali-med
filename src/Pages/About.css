@@ -9,6 +9,13 @@
   background-repeat: no-repeat;
 }
 
+@media (max-width: 768px) {
+  .about-page {
+    background-size: cover;
+    background-position: center 20%;
+  }
+}
+
 .about-layout {
   display: grid;
   gap: 24px;

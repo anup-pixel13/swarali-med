@@ -432,7 +432,8 @@
 }
 
 .parallax-inner {
-  width: 100%;
+  width: min(100%, var(--container));
+  margin: 0 auto;
   display: flex;
   justify-content: flex-start;
 }
