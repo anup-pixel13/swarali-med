@@ -27,10 +27,11 @@
   background:
     radial-gradient(circle at top left, rgba(0, 59, 149, 0.16), transparent 30%),
     radial-gradient(circle at 86% 8%, rgba(var(--soft-yellow-rgb), 0.24), transparent 30%),
-    url("../assets/hero-banner.webp");
+    url("../assets/hero-banner-tall.webp");
   background-size: auto, auto, 100% auto;
   background-position: top left, top right, center top;
   background-repeat: no-repeat;
+  background-color: #eaf4fc;
 }
 
 .hero-bg-shape {
@@ -610,7 +611,7 @@ linear-gradient(
   rgb(98, 160, 234),
   transparent 30%
 ),
-      url("../assets/hero-banner0.webp");
+      url("../assets/hero-banner0-tall.webp");
     background-size: auto, auto, 100% auto;
     background-position: top left, top right, top center;
     background-repeat: no-repeat, no-repeat, no-repeat;
