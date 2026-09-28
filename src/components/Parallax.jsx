@@ -5,18 +5,25 @@ import { Link } from "react-router-dom";
 function Parallax({ badge, title, text, ctaText, ctaLink, image, align = "left", sectionClassName = "" }) {
   const prefersReducedMotion = useReducedMotion();
   const [fixedBackground, setFixedBackground] = useState(false);
+  const [isMobileBackground, setIsMobileBackground] = useState(false);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 900px)");
+    const tabletQuery = window.matchMedia("(max-width: 900px)");
+    const mobileQuery = window.matchMedia("(max-width: 768px)");
 
     const syncBackgroundMode = () => {
-      setFixedBackground(!mediaQuery.matches && !prefersReducedMotion);
+      setFixedBackground(!tabletQuery.matches && !prefersReducedMotion);
+      setIsMobileBackground(mobileQuery.matches);
     };
 
     syncBackgroundMode();
-    mediaQuery.addEventListener("change", syncBackgroundMode);
+    tabletQuery.addEventListener("change", syncBackgroundMode);
+    mobileQuery.addEventListener("change", syncBackgroundMode);
 
-    return () => mediaQuery.removeEventListener("change", syncBackgroundMode);
+    return () => {
+      tabletQuery.removeEventListener("change", syncBackgroundMode);
+      mobileQuery.removeEventListener("change", syncBackgroundMode);
+    };
   }, [prefersReducedMotion]);
 
   const content = useMemo(() => {
@@ -40,6 +47,8 @@ function Parallax({ badge, title, text, ctaText, ctaLink, image, align = "left",
       className={`parallax-section ${align === "right" ? "parallax-right" : ""} ${sectionClassName}`.trim()}
       style={{
         backgroundImage: `linear-gradient(135deg, rgba(0, 45, 114, 0.74), rgba(0, 59, 149, 0.58)), url(${image})`,
+        backgroundSize: "cover",
+        backgroundPosition: isMobileBackground ? (align === "right" ? "center 26%" : "center 20%") : "center",
         backgroundAttachment: fixedBackground ? "fixed" : "scroll",
       }}
     >

@@ -951,17 +951,6 @@
   }
 }
 
-@media (max-width: 768px) {
-  .parallax-section {
-    background-size: cover !important;
-    background-position: center 20% !important;
-  }
-
-  .parallax-right {
-    background-position: center 26% !important;
-  }
-}
-
 @media (max-width: 640px) {
   .card,
   .parallax-card,
