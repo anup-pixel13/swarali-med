@@ -597,12 +597,15 @@
 
 @media (max-width: 768px) {
   .home-hero {
+    background-color: #dceffd;
     background-image:
       radial-gradient(circle at top left, rgba(0, 59, 149, 0.16), transparent 30%),
       radial-gradient(circle at 86% 8%, rgba(var(--soft-yellow-rgb), 0.24), transparent 30%),
-      url("../assets/hero-banner1.jpg");
-    background-size: auto, auto, cover;
-    background-position: top left, top right, 60% top;
+      url("../assets/hero-banner1.jpg"),
+      linear-gradient(180deg, #eef7ff 0%, #dceffd 40%, #cfe6ff 100%);
+    background-size: auto, auto, 100% auto, auto;
+    background-position: top left, top right, center top, center top;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
   }
 
   .home-trust-strip,
