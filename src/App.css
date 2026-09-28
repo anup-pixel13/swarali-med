@@ -664,7 +664,8 @@
 
 .brand-copy p {
   margin: 2px 0 0;
-  color: var(--text-muted);
+  color: var(--text-navy);
+  font-weight: 600;
   font-size: 0.88rem;
 }
 
@@ -821,29 +822,46 @@
   right: 22px;
   bottom: 22px;
   z-index: 1150;
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 10px;
-  min-height: 58px;
-  padding: 0 18px;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  padding: 0;
+  gap: 0;
   border-radius: 999px;
   background: linear-gradient(135deg, #25d366, #1ea852);
   color: var(--white);
   box-shadow: 0 20px 44px rgba(37, 211, 102, 0.3);
   overflow: hidden;
+  transition: width var(--transition), padding var(--transition), gap var(--transition);
+}
+
+.whatsapp-float svg {
+  flex-shrink: 0;
+  font-size: 1.75rem;
 }
 
 .whatsapp-float span {
   max-width: 0;
   opacity: 0;
   white-space: nowrap;
-  transition: max-width var(--transition), opacity var(--transition);
+  transition: max-width var(--transition), opacity var(--transition), margin-left var(--transition);
+}
+
+.whatsapp-float:hover,
+.whatsapp-float:focus-visible {
+  width: 172px;
+  justify-content: flex-start;
+  padding: 0 18px;
+  gap: 10px;
 }
 
 .whatsapp-float:hover span,
 .whatsapp-float:focus-visible span {
   max-width: 140px;
   opacity: 1;
+  margin-left: 0;
 }
 
 .pulse-whatsapp {
@@ -962,7 +980,8 @@
   .whatsapp-float {
     right: 16px;
     bottom: 16px;
-    min-height: 54px;
+    width: 54px;
+    height: 54px;
   }
 
   .back-to-top {

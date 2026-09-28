@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useMemo, useRef, useState } from "react";
 import EquipmentCard from "../components/EquipmentCard";
+import EquipmentEnquiryModal from "../components/EquipmentEnquiryModal";
 import EquipmentModal from "../components/EquipmentModal";
 import BackButton from "../components/BackButton";
 import items from "../data/equipment.json";
@@ -59,6 +60,11 @@ function Equipment() {
   const [availability, setAvailability] = useState(initialState.availability);
   const [page, setPage] = useState(initialState.page);
   const [selected, setSelected] = useState(null);
+  const [enquiryItem, setEnquiryItem] = useState(null);
+  const openEnquiryModal = (item) => {
+    setSelected(null);
+    setEnquiryItem(item);
+  };
 
   // Refs for deterministic scroll-on-pagination
   const equipmentGridRef = useRef(null);
@@ -202,7 +208,7 @@ function Equipment() {
                   viewport={{ once: true, amount: 0.15 }}
                   transition={{ duration: 0.28, delay: index * 0.03 }}
                 >
-                  <EquipmentCard item={item} onView={setSelected} />
+                  <EquipmentCard item={item} onView={setSelected} onWhatsAppEnquiry={openEnquiryModal} />
                 </motion.div>
               ))}
             </div>
@@ -252,7 +258,8 @@ function Equipment() {
           </motion.div>
         )}
 
-        <EquipmentModal item={selected} onClose={() => setSelected(null)} />
+        <EquipmentModal item={selected} onClose={() => setSelected(null)} onWhatsAppEnquiry={openEnquiryModal} />
+        <EquipmentEnquiryModal item={enquiryItem} onClose={() => setEnquiryItem(null)} />
       </div>
     </section>
   );

@@ -1,7 +1,7 @@
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-function EquipmentModal({ item, onClose }) {
+function EquipmentModal({ item, onClose, onWhatsAppEnquiry }) {
   const prefersReducedMotion = useReducedMotion();
   const [failedImages, setFailedImages] = useState({});
   const imageError = item ? failedImages[item.image] : false;
@@ -84,14 +84,13 @@ function EquipmentModal({ item, onClose }) {
                   <p><strong>Availability:</strong> {item.availability}</p>
                 </motion.div>
 
-                <a
+                <button
+                  type="button"
                   className="btn"
-                  href={`https://wa.me/918779508016?text=${encodeURIComponent(`Hello, I want to know the rental or purchase details for ${item.name}.`)}`}
-                  target="_blank"
-                  rel="noreferrer"
+                  onClick={() => onWhatsAppEnquiry(item)}
                 >
                   Ask on WhatsApp
-                </a>
+                </button>
               </div>
             </div>
           </motion.div>

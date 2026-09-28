@@ -1,12 +1,9 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { useState } from "react";
 
-function EquipmentCard({ item, onView }) {
+function EquipmentCard({ item, onView, onWhatsAppEnquiry }) {
   const prefersReducedMotion = useReducedMotion();
   const [imageError, setImageError] = useState(false);
-  const msg = encodeURIComponent(
-    `Hello, I wish to know the rental / purchase details of ${item.name}.`
-  );
   const badgeClass = item.availability.toLowerCase().replace(/\s/g, "-");
 
   return (
@@ -48,14 +45,13 @@ function EquipmentCard({ item, onView }) {
           View Details
         </button>
 
-        <a
+        <button
+          type="button"
           className="btn"
-          href={`https://wa.me/918779508016?text=${msg}`}
-          target="_blank"
-          rel="noreferrer"
+          onClick={() => onWhatsAppEnquiry(item)}
         >
           WhatsApp Enquiry
-        </a>
+        </button>
       </div>
     </motion.article>
   );
