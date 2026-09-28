@@ -3,6 +3,8 @@ import { FaFacebookF, FaInstagram, FaMapMarkerAlt, FaPhoneAlt, FaWhatsapp } from
 import logo from "../assets/logo-no-text.png";
 
 function Footer() {
+  const mapQuery = encodeURIComponent("Navi Mumbai, Maharashtra");
+
   return (
     <footer className="footer">
       <div className="container footer-grid footer-grid-upgraded">
@@ -35,10 +37,34 @@ function Footer() {
         <div>
           <h4>Contact Info</h4>
           <ul className="footer-list footer-contact-list">
-            <li><FaPhoneAlt /> <span>+91 8779508016</span></li>
-            <li><FaPhoneAlt /> <span>+91 7977506929</span></li>
-            <li><FaWhatsapp /> <span>WhatsApp Support Available</span></li>
-            <li><FaMapMarkerAlt /> <span>Navi Mumbai, Maharashtra</span></li>
+            <li>
+              <FaPhoneAlt />
+              <a href="tel:+918779508016">+91 8779508016</a>
+            </li>
+            <li>
+              <FaPhoneAlt />
+              <a href="tel:+917977506929">+91 7977506929</a>
+            </li>
+            <li>
+              <FaWhatsapp />
+              <a
+                href="https://wa.me/918779508016?text=Hello%2C%20I%20want%20enquiry%20regarding%20Swarali%20Nursing%20Services."
+                target="_blank"
+                rel="noreferrer"
+              >
+                WhatsApp Support Available
+              </a>
+            </li>
+            <li>
+              <FaMapMarkerAlt />
+              <a
+                href={`https://www.google.com/maps/search/?api=1&query=${mapQuery}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Navi Mumbai, Maharashtra
+              </a>
+            </li>
           </ul>
 
           <div className="footer-socials">

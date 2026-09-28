@@ -65,6 +65,14 @@
   color: var(--primary-blue);
 }
 
+.contact-line a {
+  color: inherit;
+}
+
+.contact-line a:hover {
+  color: var(--primary-blue);
+}
+
 .contact-action-row,
 .card-actions {
   display: flex;
@@ -73,6 +81,7 @@
 }
 
 .map-frame {
+  width: 100%;
   overflow: hidden;
   border-radius: 22px;
 }

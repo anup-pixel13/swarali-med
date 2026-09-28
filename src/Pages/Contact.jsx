@@ -6,6 +6,7 @@ import "./Contact.css";
 
 function Contact() {
   const prefersReducedMotion = useReducedMotion();
+  const mapQuery = encodeURIComponent("Navi Mumbai, Maharashtra");
 
   return (
     <section className="section premium-page-bg section-surface contact-page-section">
@@ -27,19 +28,31 @@ function Contact() {
 
               <div className="contact-line">
                 <FaPhoneAlt />
-                <span>+91 8779508016</span>
+                <a href="tel:+918779508016">+91 8779508016</a>
               </div>
               <div className="contact-line">
                 <FaPhoneAlt />
-                <span>+91 7977506929</span>
+                <a href="tel:+917977506929">+91 7977506929</a>
               </div>
               <div className="contact-line">
                 <FaWhatsapp />
-                <span>WhatsApp Support Available</span>
+                <a
+                  href="https://wa.me/918779508016?text=Hello%2C%20I%20want%20enquiry%20regarding%20Swarali%20Nursing%20Services."
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  WhatsApp Support Available
+                </a>
               </div>
               <div className="contact-line">
                 <FaMapMarkerAlt />
-                <span>Navi Mumbai, Maharashtra</span>
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${mapQuery}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Navi Mumbai, Maharashtra
+                </a>
               </div>
               <div className="contact-line">
                 <FaClock />
@@ -73,7 +86,7 @@ function Contact() {
                   title="Swarali Nursing Services Location"
                   src="https://www.google.com/maps?q=Navi%20Mumbai%2C%20Maharashtra&z=11&output=embed"
                   width="100%"
-                  height="300"
+                  height="380"
                   style={{ border: 0, borderRadius: "18px" }}
                   allowFullScreen=""
                   loading="lazy"

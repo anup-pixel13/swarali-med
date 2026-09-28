@@ -282,6 +282,75 @@
   margin-top: 24px;
 }
 
+.equipment-enquiry-modal {
+  width: min(640px, 100%);
+}
+
+.equipment-enquiry-close svg {
+  font-size: 1rem;
+}
+
+.equipment-enquiry-modal h3 {
+  margin: 0;
+  color: var(--text-navy);
+}
+
+.equipment-enquiry-subtitle {
+  margin: 8px 0 0;
+}
+
+.equipment-enquiry-form {
+  display: grid;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.equipment-enquiry-form input,
+.equipment-enquiry-form textarea {
+  width: 100%;
+  min-height: 50px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 59, 149, 0.12);
+  background: rgba(255, 255, 255, 0.86);
+  color: var(--text-navy);
+}
+
+.equipment-enquiry-form textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.equipment-enquiry-form input:focus,
+.equipment-enquiry-form textarea:focus {
+  outline: none;
+  border-color: rgba(0, 59, 149, 0.32);
+  box-shadow: 0 0 0 4px rgba(0, 59, 149, 0.1), 0 0 0 8px rgba(var(--soft-yellow-rgb), 0.18);
+}
+
+.equipment-enquiry-group {
+  display: grid;
+  gap: 8px;
+}
+
+.equipment-enquiry-group > label {
+  font-weight: 600;
+  color: var(--text-navy);
+}
+
+.equipment-enquiry-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+}
+
+.equipment-enquiry-options label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-navy);
+}
+
 @media (max-width: 1100px) {
   .equipment-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
