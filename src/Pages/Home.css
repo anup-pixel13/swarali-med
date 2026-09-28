@@ -25,10 +25,10 @@
 
 .home-hero {
   background:
-    linear-gradient(160deg, rgba(235, 247, 255, 0.9), rgba(226, 240, 255, 0.86) 52%, rgba(206, 228, 252, 0.9)),
+   /*  linear-gradient(160deg, rgb(26, 95, 180), rgba(226, 240, 255, 0.86) 52%, rgba(206, 228, 252, 0.9)), */
     radial-gradient(circle at top left, rgba(0, 59, 149, 0.16), transparent 30%),
     radial-gradient(circle at 86% 8%, rgba(var(--soft-yellow-rgb), 0.24), transparent 30%),
-    url("../assets/hero-banner.jpg");
+    url("../assets/hero-banner.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -242,7 +242,7 @@
   margin: 14px 0 0;
   line-height: 1.08;
   letter-spacing: -0.03em;
-  color: var(--text-navy);
+  /* color: var(--text-navy); */
   font-size: clamp(2rem, 4vw, 3.25rem);
   font-weight: 800;
 }
@@ -253,7 +253,7 @@
   padding: 10px 14px;
   border-radius: 999px;
   background: rgba(0, 59, 149, 0.08);
-  color: var(--primary-blue);
+  color :  rgb(0, 0, 0);
   font-weight: 700;
 }
 

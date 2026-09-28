@@ -12,7 +12,7 @@ import {
   FaTimes,
   FaWhatsapp,
 } from "react-icons/fa";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo-no-text.png";
 
 const navItems = [
   { to: "/", label: "Home", icon: <FaHome />, end: true },

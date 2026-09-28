@@ -69,7 +69,7 @@
   position: relative;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(234, 243, 255, 0.68) 62%, rgba(255, 249, 236, 0.66)),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(0, 59, 149, 0.06), rgba(var(--soft-yellow-rgb), 0.16));
+    linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(0, 59, 149, 0.06), rgba(var(--soft-yellow-rgb), 0.16)); 
   border: 1px solid rgba(255, 255, 255, 0.68);
   box-shadow: var(--shadow-glow);
   backdrop-filter: blur(16px) saturate(140%);
@@ -86,7 +86,7 @@
   inset: 1px 1px auto;
   height: 36%;
   border-radius: calc(var(--radius-lg) - 2px);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0));
+  /* background: linear-gradient(180deg, rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0)); */
   pointer-events: none;
 }
 
