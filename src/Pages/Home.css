@@ -434,7 +434,7 @@
 .home-equipment-preview {
   background:
     linear-gradient(180deg, rgba(237, 246, 255, 0.92), rgba(228, 241, 255, 0.9) 54%, rgba(214, 234, 255, 0.92)),
-    url("/equipment/suction-machinejpg.jpg");
+    url("/equipment/patient-monitor.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
