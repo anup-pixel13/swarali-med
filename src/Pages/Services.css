@@ -3,7 +3,7 @@
     radial-gradient(circle at 14% 10%, rgba(0, 59, 149, 0.18), transparent 26%),
     radial-gradient(circle at 88% 12%, rgba(var(--soft-yellow-rgb), 0.2), transparent 22%),
     linear-gradient(180deg, rgba(205, 228, 255, 0.9), rgba(190, 218, 255, 0.88) 54%, rgba(176, 207, 255, 0.9)),
-    url("/equipment/hospital-bed.jpg");
+    url("/equipment/cpap-machine.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -31,5 +31,12 @@
   .services-8-grid,
   .services-highlight-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-page-section {
+    background-size: cover;
+    background-position: center 18%;
   }
 }

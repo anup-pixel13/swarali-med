@@ -9,6 +9,13 @@
   background-repeat: no-repeat;
 }
 
+@media (max-width: 768px) {
+  .contact-page-section {
+    background-size: cover;
+    background-position: center 18%;
+  }
+}
+
 .contact-grid {
   display: grid;
   gap: 24px;

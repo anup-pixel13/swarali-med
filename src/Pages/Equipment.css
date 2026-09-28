@@ -9,6 +9,13 @@
   background-repeat: no-repeat;
 }
 
+@media (max-width: 768px) {
+  .equipment-page-section {
+    background-size: cover;
+    background-position: center 16%;
+  }
+}
+
 .premium-filter-box,
 .equipment-card,
 .modal-card {

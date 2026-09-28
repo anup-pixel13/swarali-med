@@ -432,7 +432,8 @@
 }
 
 .parallax-inner {
-  width: 100%;
+  width: var(--container);
+  margin: 0 auto;
   display: flex;
   justify-content: flex-start;
 }
@@ -947,6 +948,17 @@
   .parallax-section {
     min-height: 460px;
     background-attachment: scroll !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .parallax-section {
+    background-size: cover !important;
+    background-position: center 20% !important;
+  }
+
+  .parallax-right {
+    background-position: center 26% !important;
   }
 }
 

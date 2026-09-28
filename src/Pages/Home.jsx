@@ -51,8 +51,8 @@ const HERO_PANEL_FLOAT = { y: [0, -10, 0] };
 const HERO_PANEL_FLOAT_TRANSITION = { duration: 5.2, repeat: Infinity, ease: "easeInOut" };
 
 const PARALLAX_IMAGES = {
-  primary: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=80",
-  secondary: "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1600&q=80",
+  primary: "/equipment/patient-monitor.jpg",
+  secondary: "/equipment/oxygen-concentrator-10l.jpg",
 };
 
 function Home() {
