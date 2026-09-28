@@ -165,10 +165,13 @@
 .hero-content p {
   max-width: 640px;
   margin: 22px 0 0;
+  padding: 14px 18px;
   font-size: 1.07rem;
   color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(0, 59, 149, 0.08);
 }
-
 .hero-actions,
 .hero-panel-actions,
 .cta-actions {
@@ -432,7 +435,7 @@ linear-gradient(
 .home-why-choose {
   background:
     linear-gradient(160deg, rgba(180, 218, 255, 0.75), rgba(155, 204, 255, 0.75) 50%, rgba(185, 220, 255, 0.75)),
-    url("/equipment/wheelchair.jpg");
+    url("../assets/whyus.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -440,8 +443,8 @@ linear-gradient(
 
 .home-equipment-preview {
   background:
-    linear-gradient(180deg, rgba(237, 246, 255, 0.92), rgba(228, 241, 255, 0.9) 54%, rgba(214, 234, 255, 0.92)),
-    url("/equipment/patient-monitor.jpg");
+    linear-gradient(180deg, rgba(237, 246, 255, 0.75), rgba(228, 241, 255, 0.75) 54%, rgba(214, 234, 255, 0.75)),
+    url("../assets/equipment.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -450,7 +453,7 @@ linear-gradient(
 .home-testimonials {
   background:
     linear-gradient(180deg, rgba(210, 232, 255, 0.92), rgba(190, 218, 255, 0.9) 52%, rgba(180, 212, 255, 0.92)),
-    url("/equipment/nebulizer.jpg");
+    url("../assets/review.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -458,8 +461,8 @@ linear-gradient(
 
 .home-faq {
   background:
-    linear-gradient(180deg, rgba(255, 252, 244, 0.9), rgba(247, 241, 220, 0.88) 52%, rgba(255, 249, 236, 0.9)),
-    url("/equipment/commode-chair.jpg");
+    linear-gradient(220deg, rgb(7, 192, 192), rgba(247, 241, 220, 0.88) 52%, rgb(239, 156, 246)),
+    url("../assets/faq.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -470,8 +473,7 @@ linear-gradient(
   overflow: hidden;
   background:
     linear-gradient(120deg, rgba(0, 32, 82, 0.96), rgba(0, 45, 114, 0.93), rgba(29, 95, 209, 0.9), rgba(53, 95, 155, 0.92)),
-    linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url("/equipment/oxygen-concentrator-10l.jpg");
+    linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

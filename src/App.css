@@ -189,6 +189,8 @@
 .page-back-btn {
   display: inline-flex;
   align-items: center;
+   
+  margin-bottom: 20px;
   gap: 6px;
   margin-bottom: 20px;
   padding: 8px 18px;
@@ -617,12 +619,9 @@
   top: 0;
   z-index: 1100;
   backdrop-filter: blur(16px) saturate(140%);
-  background: linear-gradient(120deg, rgb(0, 0, 255), rgba(234, 243, 255, 0.96), rgb(128, 255, 255), rgb(192, 192, 192));
-  background-size: 220% 220%;
-  animation: navGradient 9s ease infinite;
+  background: linear-gradient(120deg, rgb(4, 239, 211), rgb(28, 113, 216));
   border-bottom: 1px solid rgba(255, 255, 255, 0.54);
 }
-
 .navbar-scrolled {
   box-shadow: 0 18px 42px rgba(0, 59, 149, 0.12);
 }
@@ -717,11 +716,8 @@
   position: relative;
   overflow: hidden;
   margin-top: 0;
-  background: linear-gradient(120deg, #002d72, #003b95, #1d5fd1, #355f9b, #003b95);
-  background-size: 260% 260%;
-  animation: deepGradient 12s ease infinite;
+  background: linear-gradient(120deg, rgb(7, 192, 192), rgb(98, 160, 234), rgb(153, 193, 241));
 }
-
 .footer::before,
 .footer::after {
   content: "";
@@ -1006,4 +1002,12 @@
   .btn::before {
     display: none;
   }
+}
+.equipment-enquiry-modal {
+  max-height: 90vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.section:has(.page-back-btn) {
+  padding-top: 32px;
 }

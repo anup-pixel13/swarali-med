@@ -6,7 +6,7 @@ import "./Contact.css";
 
 function Contact() {
   const prefersReducedMotion = useReducedMotion();
-  const mapQuery = encodeURIComponent("Navi Mumbai, Maharashtra");
+  const mapQuery = encodeURIComponent("Mumbai, Maharashtra");
 
   return (
     <section className="section premium-page-bg section-surface contact-page-section">
@@ -51,7 +51,7 @@ function Contact() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Navi Mumbai, Maharashtra
+                  Mumbai, Maharashtra
                 </a>
               </div>
               <div className="contact-line">
@@ -76,24 +76,24 @@ function Contact() {
               </div>
             </motion.div>
 
-            <motion.div className="card map-card liquid-glass" initial={prefersReducedMotion ? false : { opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.35, delay: 0.05 }}>
-              <h3>Our Service Area</h3>
-              <p>
-                We provide home healthcare and equipment services in Navi Mumbai and nearby locations.
-              </p>
-              <div className="map-frame">
-                <iframe
-                  title="Swarali Nursing Services Location"
-                  src="https://www.google.com/maps?q=Navi%20Mumbai%2C%20Maharashtra&z=11&output=embed"
-                  width="100%"
-                  height="380"
-                  style={{ border: 0, borderRadius: "18px" }}
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
-              </div>
-            </motion.div>
+			<motion.div className="card map-card liquid-glass" initial={prefersReducedMotion ? false : { opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.35 }}>
+			  <h2>Our Location & Service Area</h2>
+			  <p>
+			    We provide home healthcare and equipment services in Mumbai and nearby locations.
+			  </p>
+			  <div className="map-frame">
+			    <iframe
+			      title="Swarali Nursing Services Location"
+			      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.116174326577!2d73.09365457593466!3d19.01460178217744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7e9f82a417791%3A0xd17a82dc631e8f24!2sSwarali%20Nursing%20Services!5e0!3m2!1sen!2sin!4v1790600603898!5m2!1sen!2sin"
+			      width="100%"
+			      height="380"
+			      style={{ border: 0, borderRadius: "18px" }}
+			      allowFullScreen=""
+			      loading="lazy"
+			      referrerPolicy="strict-origin-when-cross-origin"
+			    />
+			  </div>
+			</motion.div>
           </div>
 
           <motion.div initial={prefersReducedMotion ? false : { opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.35 }}>

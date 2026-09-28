@@ -2,8 +2,8 @@
   background:
     radial-gradient(circle at 10% 10%, rgba(0, 59, 149, 0.16), transparent 26%),
     radial-gradient(circle at 88% 10%, rgba(var(--soft-yellow-rgb), 0.2), transparent 22%),
-    linear-gradient(180deg, rgba(232, 244, 255, 0.9), rgba(216, 236, 255, 0.88) 52%, rgba(226, 242, 255, 0.9)),
-    url("/equipment/patient-monitor.jpg");
+    linear-gradient(180deg, rgba(232, 244, 255, 0.75), rgba(216, 236, 255, 0.8) 52%, rgba(226, 242, 255, 0.75)),
+    url("../assets/contact.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

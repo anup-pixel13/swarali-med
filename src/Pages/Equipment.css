@@ -2,8 +2,7 @@
   background:
     radial-gradient(circle at 10% 10%, rgba(0, 59, 149, 0.16), transparent 25%),
     radial-gradient(circle at 88% 8%, rgba(var(--soft-yellow-rgb), 0.2), transparent 22%),
-    linear-gradient(180deg, rgba(240, 247, 255, 0.9), rgba(228, 239, 255, 0.88) 56%, rgba(214, 232, 255, 0.9)),
-    url("/equipment/oxygen-concentrator-10l.jpg");
+    linear-gradient(180deg, rgb(153, 193, 241), rgb(240, 247, 255) 56%, rgb(153, 193, 241));
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

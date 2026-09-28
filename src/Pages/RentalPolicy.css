@@ -2,8 +2,8 @@
   background:
     radial-gradient(circle at 14% 10%, rgba(0, 59, 149, 0.16), transparent 24%),
     radial-gradient(circle at 86% 12%, rgba(var(--soft-yellow-rgb), 0.18), transparent 22%),
-    linear-gradient(180deg, rgba(244, 249, 255, 0.92), rgba(231, 241, 255, 0.9) 56%, rgba(220, 235, 255, 0.92)),
-    url("/equipment/commode-chair.jpg");
+    linear-gradient(180deg, rgba(244, 249, 255, 0.81), rgba(231, 241, 255, 0.75) 56%, rgba(220, 235, 255, 0.75)),
+    url("../assets/rental.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
