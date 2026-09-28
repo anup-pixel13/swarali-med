@@ -51,8 +51,8 @@ const HERO_PANEL_FLOAT = { y: [0, -10, 0] };
 const HERO_PANEL_FLOAT_TRANSITION = { duration: 5.2, repeat: Infinity, ease: "easeInOut" };
 
 const PARALLAX_IMAGES = {
-  primary: "/equipment/patient-monitor.jpg",
-  secondary: "/equipment/oxygen-concentrator-10l.jpg",
+  primary: "/parallax/parallax1.png",
+  secondary: "/parallax/parallax2.png",
 };
 
 function Home() {
