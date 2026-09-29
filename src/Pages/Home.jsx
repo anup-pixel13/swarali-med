@@ -217,10 +217,12 @@ function Home() {
             <motion.span variants={fadeUp} className="tag premium-tag hero-tagline-badge">
               Providing Excellent Care Since 2015
             </motion.span>
-            <motion.h1 variants={fadeUp}>
-              Compassionate Home Healthcare
-              <span> & Medical Equipment Support</span>
-            </motion.h1>
+			<motion.div variants={fadeUp} className="hero-heading-glass">
+			  <motion.h1>
+			    Compassionate Home Healthcare
+			    <span> & Medical Equipment Support</span>
+			  </motion.h1>
+			</motion.div>
             <motion.p variants={fadeUp}>
               Swarali Nursing Services delivers trusted nursing care, attendants,
               doctor visits, physiotherapy, blood tests and medical equipment rental

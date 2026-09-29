@@ -1,4 +1,7 @@
 :root {
+	  min-height: 100dvh;
+  position: relative;
+  isolation: isolate;
   --primary-blue: #003b95;
   --primary-blue-strong: #002d72;
   --secondary-blue: #eaf3ff;
@@ -24,10 +27,11 @@
 * {
   box-sizing: border-box;
 }
-
 html {
   scroll-behavior: smooth;
+  background: #1a5fc4;
 }
+
 
 body {
   margin: 0;
@@ -40,8 +44,8 @@ body {
     linear-gradient(180deg, #e8f2ff 0%, #edf5ff 50%, #e6f0ff 100%);
   overflow-x: hidden;
   position: relative;
+ 
 }
-
 body::before {
   content: "";
   position: fixed;
