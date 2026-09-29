@@ -6,9 +6,10 @@
   --hero-logo-crop-scale: 100%;
   --hero-logo-offset-x: 0%;
   --hero-logo-offset-y: 0%;
-  position: relative;
+position: relative;
   padding: calc(var(--nav-height) + 12px) 0 90px;
   overflow: hidden;
+  background-color: #1a5fc4;
 }
 
 .hero::before {
@@ -24,16 +25,15 @@
 }
 
 .home-hero {
-   background:
+  background:
     radial-gradient(circle at top left, rgba(0, 59, 149, 0.16), transparent 30%),
     radial-gradient(circle at 86% 8%, rgba(var(--soft-yellow-rgb), 0.24), transparent 30%),
-    linear-gradient(180deg, transparent 0%, transparent 75%, #2f8fe0 95%, #1a5fc4 100%),
+    linear-gradient(180deg, transparent 0%, transparent 78%, #2f8fe0 92%, #1a5fc4 100%),
     url("../assets/hero-banner-tall.webp");
   background-size: auto, auto, 100% 100%, 100% auto;
   background-position: top left, top right, top center, top center;
   background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-  background-color: #1a5fc4;
-}
+  background-color: #1a5fc4;}
 
 .hero-bg-shape {
   position: absolute;
@@ -283,12 +283,8 @@
 .home-trust-strip {
   background:
     linear-gradient(120deg, rgba(0, 32, 82, 0.96), rgba(0, 45, 114, 0.94) 55%, rgba(0, 59, 149, 0.92)),
-    linear-gradient(0deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18)),
-/*     url("/equipment/patient-monitor.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; 
-  color: var(--white);*/
+    linear-gradient(0deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18));
+  color: var(--white);
 }
 
 .trust-strip {
@@ -605,7 +601,12 @@ linear-gradient(
 }
 
 @media (max-width: 768px) {
+	.hero {
+    background-color: #1a5fc4;
+  }
   .home-hero {
+      min-height: 100vw;
+  
     min-height: 100vw;
      background-image:
       radial-gradient(circle at top left, rgba(0, 59, 149, 0.16), transparent 0%),
@@ -664,5 +665,10 @@ linear-gradient(
 
   .home-cta {
     background-position: center 26%;
+  }
+}
+@media (min-width: 1600px) {
+  .home-hero {
+    background-size: auto, auto, 100% 100%, 130% auto;
   }
 }
